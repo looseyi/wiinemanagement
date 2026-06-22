@@ -1,0 +1,21 @@
+{
+  "name": "north-america-static-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --import tsx --test",
+    "build": "node --import tsx scripts/build-site.ts",
+    "generate": "node --import tsx scripts/build-site.ts",
+    "clean": "node --import tsx -e \"import('node:fs/promises').then(fs => fs.rm('dist', { recursive: true, force: true }))\"",
+    "serve": "npm run build && node --import tsx scripts/serve-site.ts",
+    "preview": "node --import tsx scripts/serve-site.ts"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "yaml": "^2.9.0"
+  }
+}

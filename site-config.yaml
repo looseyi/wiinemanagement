@@ -1,0 +1,496 @@
+# ──────────────────────────────────────────────────
+# Wilnes Management LTD — Site Configuration
+# ──────────────────────────────────────────────────
+# Edit this file to customize the entire website.
+# Run `npm run build` after changes, then deploy dist/.
+#
+# Every text field supports bilingual zh/en keys.
+# Set en: "" for fields that don't need English text.
+
+# ── Site Metadata ──
+site:
+  name: Wilnes Management LTD
+  tagline:
+    zh: 北美市场进入与业务增长合作伙伴
+    en: North America Market Entry & Business Growth Partner
+  languageLabel: "EN / 中文"
+  ctaLabel:
+    zh: 预约咨询
+    en: Book a Consultation
+  ctaHref: "#inquiry"
+  contact:
+    phone: "+1 (778) 555-0188"
+    email: dmiao@laurentian.ca
+    wechat: Wilne-NorthAmerica
+  socialLinks:
+    - label: { zh: LinkedIn, en: LinkedIn }
+      href: "#"
+    - label: { zh: 微信, en: WeChat }
+      href: "#"
+    - label: { zh: 邮箱, en: Email }
+      href: "mailto:dmiao@laurentian.ca"
+
+# ── Navigation ──
+nav:
+  - label: { zh: 首页, en: Home }
+    href: "/"
+  - label: { zh: 解决方案, en: Solutions }
+    href: "/solutions/"
+  - label: { zh: 行业领域, en: Industries }
+    href: "/industries/"
+  - label: { zh: 案例, en: Case Studies }
+    href: "/case-studies/"
+  - label: { zh: 关于我们, en: About }
+    href: "/about/"
+  - label: { zh: 联系我们, en: Contact }
+    href: "#inquiry"
+
+# ── Footer ──
+footer:
+  title:
+    zh: 准备开始您的北美增长战略？
+    en: "Let's Build Your North America Growth Strategy"
+  ctaLabel:
+    zh: 立即开始
+    en: Get started
+  columns:
+    - heading: { zh: 公司, en: Company }
+      links:
+        - label: { zh: 首页, en: Home }
+          href: "/"
+        - label: { zh: 关于我们, en: About }
+          href: "/about/"
+        - label: { zh: 解决方案, en: Solutions }
+          href: "/solutions/"
+    - heading: { zh: 页面, en: Pages }
+      links:
+        - label: { zh: 行业领域, en: Industries }
+          href: "/industries/"
+        - label: { zh: 案例, en: Case Studies }
+          href: "/case-studies/"
+        - label: { zh: 联系咨询, en: Contact }
+          href: "#inquiry"
+    - heading: { zh: 核心方向, en: Focus }
+      links:
+        - label: { zh: 市场进入, en: Market Entry }
+          href: "/solutions/"
+        - label: { zh: 业务开发, en: Business Development }
+          href: "/solutions/"
+        - label: { zh: 增长执行, en: Growth Execution }
+          href: "/solutions/"
+
+# ── Contact Form ──
+form:
+  title:
+    zh: 让我们一起制定你的北美增长战略
+    en: "Let's Build Your North America Growth Strategy"
+  subtitle:
+    zh: 如果你正在计划进入或拓展加拿大与美国市场，我们很乐意支持你的业务发展。
+    en: If you are planning to enter or expand in Canada and the United States, we would be happy to support your journey.
+  successMessage:
+    zh: 需求已记录。当前版本为静态演示站点，后续可接入邮件、CRM 或 serverless 表单处理。
+    en: Your request has been captured. This is a static demo for now and can later connect to email, CRM, or a serverless form endpoint.
+  fields:
+    stageOptions:
+      - { zh: 准备出海, en: Preparing to enter }
+      - { zh: 已经出海需要优化, en: Already in market, needs optimization }
+      - { zh: 其他, en: Other }
+    marketOptions:
+      - { zh: 美国, en: United States }
+      - { zh: 加拿大, en: Canada }
+      - { zh: 北美整体, en: North America overall }
+    needOptions:
+      - { zh: 市场进入战略, en: Market entry strategy }
+      - { zh: 业务开发, en: Business development }
+      - { zh: 增长执行, en: Growth execution }
+      - { zh: 本地商务支持, en: Local business support }
+      - { zh: 其他, en: Other }
+
+# ── Pages ──
+pages:
+  # ═══════════════════════════ Homepage ═══════════════════════════
+  - slug: ""
+    title:
+      zh: 帮助中国品牌与制造企业进入并拓展北美市场
+      en: Helping Chinese Brands & Manufacturers Enter and Grow in North America
+    description:
+      zh: 从市场进入到业务增长，从渠道开发到OEM/ODM合作。
+      en: "From Market Entry to Business Growth \u2014 From Channel Development to OEM/ODM Partnerships."
+    hero:
+      eyebrow:
+        zh: 北美市场进入平台
+        en: North America Entry Platform
+      title:
+        zh: 帮助中国品牌与制造企业进入并拓展北美市场
+        en: Helping Chinese Brands & Manufacturers Enter and Grow in North America
+      subtitle:
+        zh: 从市场进入到业务增长
+        en: From Market Entry to Business Growth
+      subtitle2:
+        zh: 从渠道开发到OEM/ODM合作
+        en: From Channel Development to OEM/ODM Partnerships
+      primaryCta:
+        label: { zh: 预约咨询, en: Book a Consultation }
+        href: "#inquiry"
+      secondaryCta:
+        label: { zh: 了解更多, en: Learn More }
+        href: "/solutions/"
+      metrics:
+        - value: "US + CA"
+          label: { zh: 双市场覆盖, en: Dual-market coverage }
+        - value: "4"
+          label: { zh: 核心服务模块, en: Core service modules }
+        - value: 24h
+          label: { zh: 咨询响应时间, en: Response window }
+    sections:
+      # ── Who We Help ──
+      - type: who-we-help
+        theme: white
+        eyebrow: { zh: 我们服务的客户, en: Who We Help }
+        title: { zh: 我们服务的客户, en: Who We Help }
+        groups:
+          - title: { zh: 品牌方, en: Brand Owners }
+            subtitle: { zh: 中国品牌, en: Chinese brands }
+            description:
+              zh: 希望进入加拿大和美国市场
+              en: looking to enter the Canadian and U.S. markets
+          - title: { zh: 制造商, en: Manufacturers }
+            subtitle: { zh: 中国制造企业, en: Chinese manufacturers }
+            description:
+              zh: 寻找OEM/ODM海外客户
+              en: seeking OEM/ODM opportunities and international clients
+          - title: { zh: 渠道商与零售商, en: Distributors & Retailers }
+            subtitle: { zh: 北美渠道商与零售商, en: North American distributors and retailers }
+            description:
+              zh: 寻找中国优质供应链资源
+              en: looking for high-quality Chinese supply partners
+
+      # ── Our Solutions (homepage overview) ──
+      - type: solutions-overview
+        theme: blue
+        eyebrow: { zh: 我们的解决方案, en: Our Solutions }
+        title: { zh: 我们的解决方案, en: Our Solutions }
+        groups:
+          - title: { zh: 市场进入战略, en: Market Entry Strategy }
+            items:
+              - { zh: 北美市场调研, en: North America market research }
+              - { zh: 竞争分析, en: Competitive analysis }
+              - { zh: 品牌定位, en: Brand positioning }
+              - { zh: 渠道规划, en: Channel strategy development }
+          - title: { zh: 业务开发, en: Business Development }
+            items:
+              - { zh: 渠道商开发, en: Distributor development }
+              - { zh: 经销商拓展, en: Channel partner expansion }
+              - { zh: B2B客户开发, en: B2B client acquisition }
+              - { zh: OEM/ODM合作开发, en: OEM/ODM opportunity development }
+          - title: { zh: 增长执行, en: Growth Execution }
+            items:
+              - { zh: 社交媒体运营, en: Social media management }
+              - { zh: 内容营销, en: Content marketing }
+              - { zh: Shopify独立站建设, en: Shopify store development }
+              - { zh: SEO优化, en: SEO optimization }
+              - { zh: KOL合作, en: Influencer (KOL) partnerships }
+          - title: { zh: 北美本地商务支持, en: Local Business Support (North America) }
+            items:
+              - { zh: 客户沟通支持, en: Client communication support }
+              - { zh: 商务会议协调, en: Business meeting coordination }
+              - { zh: 项目管理, en: Project management }
+              - { zh: 渠道关系维护, en: Channel relationship management }
+
+      # ── Solution detail cards (from Solutions page) ──
+      - type: solution-detail
+        theme: white
+        eyebrow: { zh: 解决方案详情, en: Solution Details }
+        title: { zh: 为您量身定制的出海方案, en: Tailored Expansion Programs }
+        cards:
+          - number: "01"
+            title: { zh: 品牌出海增长计划, en: Brand Expansion Program }
+            suitable:
+              zh: 适合：护肤品品牌、食品饮料品牌、消费品品牌
+              en: "Designed for: Skincare & cosmetics brands, Food & beverage brands, Consumer goods brands"
+            services:
+              - { zh: 市场进入策略制定, en: Market entry strategy development }
+              - { zh: 渠道开发, en: Channel development }
+              - { zh: 社交媒体增长, en: Social media growth strategy }
+              - { zh: Shopify独立站搭建, en: Shopify store setup }
+              - { zh: 本地商务支持, en: Local business support in North America }
+          - number: "02"
+            title: { zh: OEM/ODM业务开发计划, en: OEM/ODM Business Development Program }
+            suitable:
+              zh: 适合：化妆品工厂、保健品工厂、食品工厂
+              en: "Designed for: Cosmetic manufacturers, Nutraceutical / supplement manufacturers, Food manufacturers"
+            services:
+              - { zh: 面向北美市场的企业能力展示资料制作（Capability Deck）, en: Capability Deck development for North American market positioning }
+              - { zh: 官网建设, en: Corporate website development }
+              - { zh: 海外客户开发, en: Overseas client acquisition }
+              - { zh: OEM/ODM项目对接, en: OEM/ODM partnership development }
+              - { zh: 商务谈判支持, en: Business negotiation support }
+          - number: "03"
+            title: { zh: 北美商务代表计划, en: North America Representative Program }
+            suitable:
+              zh: 适合：没有海外团队的企业、需要北美本地业务支持的公司
+              en: "Designed for: Companies without an overseas team, Businesses needing local North America support"
+            services:
+              - { zh: 北美商务沟通与合作对接支持, en: North America business communication support }
+              - { zh: 海外客户与合作伙伴关系管理, en: Client & partner relationship management }
+              - { zh: 英文商务沟通与邮件支持, en: English business emails & communication support }
+              - { zh: 商务会议安排、协调与跟进, en: Meeting scheduling and coordination }
+              - { zh: 跨境项目执行与进度管理支持, en: Cross-border project execution & follow-up }
+
+      # ── Industries (from Industries page) ──
+      - type: industries-grid
+        theme: blue
+        eyebrow: { zh: 行业领域, en: Industries }
+        title: { zh: 我们服务的行业, en: Industries We Serve }
+        groups:
+          - title: { zh: 美妆与个护, en: Beauty & Personal Care }
+            items:
+              - { zh: 护肤品, en: Skincare }
+              - { zh: 化妆品, en: Cosmetics }
+              - { zh: 个人护理产品, en: Personal care products }
+          - title: { zh: 健康与营养, en: Health & Wellness }
+            items:
+              - { zh: 保健品, en: Nutritional supplements }
+              - { zh: 营养补充剂, en: Health products }
+              - { zh: 健康产品, en: Wellness products }
+          - title: { zh: 食品饮料, en: Food & Beverage }
+            items:
+              - { zh: 食品, en: Food products }
+              - { zh: 特色食品, en: Specialty foods }
+              - { zh: 功能性食品, en: Functional foods }
+          - title: { zh: 制造与产品开发能力, en: Manufacturing & Product Development }
+            items:
+              - { zh: 合同制造（OEM）, en: Contract Manufacturing (OEM) }
+              - { zh: 产品设计与开发（ODM）, en: Product Design & Development (ODM) }
+              - { zh: 贴牌生产解决方案（Private Label）, en: Private Label Solutions }
+
+      # ── Case Studies (from Case Studies page) ──
+      - type: case-studies-grid
+        theme: white
+        eyebrow: { zh: 案例, en: Case Studies }
+        title: { zh: 我们的项目案例, en: Our Case Studies }
+        cards:
+          - title: { zh: 市场进入规划案例, en: Market Entry Planning }
+            body:
+              zh: 市场进入策略与定位开发项目
+              en: Market entry strategy and positioning development projects
+          - title: { zh: 渠道开发案例, en: Distributor Development }
+            body:
+              zh: 渠道开发与合作获取项目
+              en: Channel development and partner acquisition initiatives
+          - title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
+            body:
+              zh: 制造与贴牌合作项目
+              en: Manufacturing and private label partnership projects
+          - title: { zh: 社交媒体增长案例, en: Social Media Growth }
+            body:
+              zh: 数字营销与品牌增长执行项目
+              en: Digital marketing and brand growth execution projects
+
+      # ── About Detail (full, from About page — replaces about-cta above) ──
+      - type: about-detail
+        theme: blue
+        body:
+          zh: Wilnes Management LTD 是一家位于加拿大温哥华的北美市场进入与业务增长合作伙伴，专注帮助中国品牌与制造企业进入加拿大及美国市场。我们通过市场战略、业务开发与本地执行支持，帮助企业实现可持续增长。
+          en: Wilnes Management LTD is a Vancouver-based North America market entry and business growth partner helping Chinese brands and manufacturers expand into Canada and the United States. We support companies through strategic market entry, business development, and local execution to enable sustainable growth in North America.
+        whatWeDo:
+          - title: { zh: 市场进入战略, en: Market Entry Strategy }
+            body:
+              zh: 帮助企业明确市场定位，理解北美市场环境，并制定有效的进入策略
+              en: We help companies define their positioning, understand the North American market landscape, and build effective go-to-market strategies.
+          - title: { zh: 业务开发, en: Business Development }
+            body:
+              zh: 为品牌与制造企业对接北美渠道商、零售商及OEM/ODM合作伙伴
+              en: We connect brands and manufacturers with distributors, retailers, and OEM/ODM partners across Canada and the United States.
+          - title: { zh: 增长执行, en: Growth Execution }
+            body:
+              zh: 支持渠道拓展、合作管理及本地市场执行落地
+              en: We support channel development, partnership management, and on-the-ground execution in the North American market.
+        whoWeWorkWith:
+          - { zh: 进入北美市场的中国消费品牌, en: Chinese consumer brands entering North America }
+          - { zh: 寻找OEM/ODM机会的制造企业, en: Manufacturers seeking OEM/ODM opportunities }
+          - { zh: 希望拓展渠道与零售合作的企业, en: Companies expanding into new distribution and retail channels }
+          - { zh: 需要北美本地代表的公司, en: Businesses requiring a North America local representative }
+        whyUs:
+          - zh: 我们是一家位于温哥华的北美市场进入与执行合作伙伴，具备真实的本地执行能力。
+            en: We are a Vancouver-based North America market entry and execution partner with real on-the-ground capability.
+          - zh: 我们结合中国制造与品牌体系的深度理解，以及北美零售与分销体系的实际经验。
+            en: We combine deep understanding of Chinese manufacturing and brand ecosystems with practical experience in the North American retail and distribution landscape.
+          - zh: 我们的双语与双文化团队能够降低沟通成本，减少执行摩擦，并加速跨境决策效率。
+            en: Our bilingual and bicultural team reduces communication friction, improves execution efficiency, and accelerates cross-border decision-making.
+          - zh: 我们不仅提供建议，更帮助企业在加拿大和美国实现真实市场进入、合作建立与增长执行。
+            en: "We don\u2019t just advise \u2014 we help execute real market entry, partnership development, and business growth in Canada and the United States."
+        ctaTitle:
+          zh: 让我们一起制定你的北美增长战略
+          en: "Let's Build Your North America Growth Strategy"
+        ctaBody:
+          zh: 如果你正在计划进入或拓展加拿大与美国市场，我们很乐意支持你的业务发展。
+          en: If you are planning to enter or expand in Canada and the United States, we would be happy to support your journey.
+        ctaLabel: { zh: 预约咨询, en: Book a Consultation }
+        ctaHref: "#inquiry"
+
+  # ═══════════════════════════ Solutions Page ═══════════════════════════
+  - slug: solutions
+    title: { zh: 解决方案, en: Solutions }
+    description:
+      zh: 品牌出海增长、OEM/ODM业务开发与北美商务代表计划。
+      en: "Brand Expansion, OEM/ODM Business Development, and North America Representative Programs."
+    masthead:
+      eyebrow: { zh: 解决方案, en: Solutions }
+      title: { zh: 我们的解决方案, en: Our Solutions }
+      body: { zh: "", en: "" }
+    sections:
+      - type: solution-detail
+        theme: white
+        cards:
+          - number: "01"
+            title: { zh: 品牌出海增长计划, en: Brand Expansion Program }
+            suitable:
+              zh: 适合：护肤品品牌、食品饮料品牌、消费品品牌
+              en: "Designed for: Skincare & cosmetics brands, Food & beverage brands, Consumer goods brands"
+            services:
+              - { zh: 市场进入策略制定, en: Market entry strategy development }
+              - { zh: 渠道开发, en: Channel development }
+              - { zh: 社交媒体增长, en: Social media growth strategy }
+              - { zh: Shopify独立站搭建, en: Shopify store setup }
+              - { zh: 本地商务支持, en: Local business support in North America }
+          - number: "02"
+            title: { zh: OEM/ODM业务开发计划, en: OEM/ODM Business Development Program }
+            suitable:
+              zh: 适合：化妆品工厂、保健品工厂、食品工厂
+              en: "Designed for: Cosmetic manufacturers, Nutraceutical / supplement manufacturers, Food manufacturers"
+            services:
+              - { zh: 面向北美市场的企业能力展示资料制作（Capability Deck）, en: Capability Deck development for North American market positioning }
+              - { zh: 官网建设, en: Corporate website development }
+              - { zh: 海外客户开发, en: Overseas client acquisition }
+              - { zh: OEM/ODM项目对接, en: OEM/ODM partnership development }
+              - { zh: 商务谈判支持, en: Business negotiation support }
+          - number: "03"
+            title: { zh: 北美商务代表计划, en: North America Representative Program }
+            suitable:
+              zh: 适合：没有海外团队的企业、需要北美本地业务支持的公司
+              en: "Designed for: Companies without an overseas team, Businesses needing local North America support"
+            services:
+              - { zh: 北美商务沟通与合作对接支持, en: North America business communication support }
+              - { zh: 海外客户与合作伙伴关系管理, en: Client & partner relationship management }
+              - { zh: 英文商务沟通与邮件支持, en: English business emails & communication support }
+              - { zh: 商务会议安排、协调与跟进, en: Meeting scheduling and coordination }
+              - { zh: 跨境项目执行与进度管理支持, en: Cross-border project execution & follow-up }
+
+  # ═══════════════════════════ Industries Page ═══════════════════════════
+  - slug: industries
+    title: { zh: 行业领域, en: Industries }
+    description:
+      zh: 我们服务的行业领域。
+      en: Industries we serve.
+    masthead:
+      eyebrow: { zh: 行业领域, en: Industries }
+      title: { zh: 我们服务的行业, en: Industries We Serve }
+      body: { zh: "", en: "" }
+    sections:
+      - type: industries-grid
+        theme: white
+        groups:
+          - title: { zh: 美妆与个护, en: Beauty & Personal Care }
+            items:
+              - { zh: 护肤品, en: Skincare }
+              - { zh: 化妆品, en: Cosmetics }
+              - { zh: 个人护理产品, en: Personal care products }
+          - title: { zh: 健康与营养, en: Health & Wellness }
+            items:
+              - { zh: 保健品, en: Nutritional supplements }
+              - { zh: 营养补充剂, en: Health products }
+              - { zh: 健康产品, en: Wellness products }
+          - title: { zh: 食品饮料, en: Food & Beverage }
+            items:
+              - { zh: 食品, en: Food products }
+              - { zh: 特色食品, en: Specialty foods }
+              - { zh: 功能性食品, en: Functional foods }
+          - title: { zh: 制造与产品开发能力, en: Manufacturing & Product Development }
+            items:
+              - { zh: 合同制造（OEM）, en: Contract Manufacturing (OEM) }
+              - { zh: 产品设计与开发（ODM）, en: Product Design & Development (ODM) }
+              - { zh: 贴牌生产解决方案（Private Label）, en: Private Label Solutions }
+
+  # ═══════════════════════════ Case Studies Page ═══════════════════════════
+  - slug: case-studies
+    title: { zh: 案例, en: Case Studies }
+    description:
+      zh: 我们的项目案例。
+      en: Our project case studies.
+    masthead:
+      eyebrow: { zh: 案例, en: Case Studies }
+      title: { zh: 案例, en: Case Studies }
+      body: { zh: "", en: "" }
+    sections:
+      - type: case-studies-grid
+        theme: white
+        cards:
+          - title: { zh: 市场进入规划案例, en: Market Entry Planning }
+            body:
+              zh: 市场进入策略与定位开发项目
+              en: Market entry strategy and positioning development projects
+          - title: { zh: 渠道开发案例, en: Distributor Development }
+            body:
+              zh: 渠道开发与合作获取项目
+              en: Channel development and partner acquisition initiatives
+          - title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
+            body:
+              zh: 制造与贴牌合作项目
+              en: Manufacturing and private label partnership projects
+          - title: { zh: 社交媒体增长案例, en: Social Media Growth }
+            body:
+              zh: 数字营销与品牌增长执行项目
+              en: Digital marketing and brand growth execution projects
+
+  # ═══════════════════════════ About Page ═══════════════════════════
+  - slug: about
+    title: { zh: 关于我们, en: About }
+    description:
+      zh: Wilnes Management LTD — 北美市场进入与业务增长合作伙伴。
+      en: Wilnes Management LTD — North America market entry and business growth partner.
+    masthead:
+      eyebrow: { zh: 关于我们, en: About Us }
+      title: { zh: 关于 Wilnes Management LTD, en: About Wilnes Management LTD }
+      body: { zh: "", en: "" }
+    sections:
+      - type: about-detail
+        theme: white
+        body:
+          zh: Wilnes Management LTD 是一家位于加拿大温哥华的北美市场进入与业务增长合作伙伴，专注帮助中国品牌与制造企业进入加拿大及美国市场。我们通过市场战略、业务开发与本地执行支持，帮助企业实现可持续增长。
+          en: Wilnes Management LTD is a Vancouver-based North America market entry and business growth partner helping Chinese brands and manufacturers expand into Canada and the United States. We support companies through strategic market entry, business development, and local execution to enable sustainable growth in North America.
+        whatWeDo:
+          - title: { zh: 市场进入战略, en: Market Entry Strategy }
+            body:
+              zh: 帮助企业明确市场定位，理解北美市场环境，并制定有效的进入策略
+              en: We help companies define their positioning, understand the North American market landscape, and build effective go-to-market strategies.
+          - title: { zh: 业务开发, en: Business Development }
+            body:
+              zh: 为品牌与制造企业对接北美渠道商、零售商及OEM/ODM合作伙伴
+              en: We connect brands and manufacturers with distributors, retailers, and OEM/ODM partners across Canada and the United States.
+          - title: { zh: 增长执行, en: Growth Execution }
+            body:
+              zh: 支持渠道拓展、合作管理及本地市场执行落地
+              en: We support channel development, partnership management, and on-the-ground execution in the North American market.
+        whoWeWorkWith:
+          - { zh: 进入北美市场的中国消费品牌, en: Chinese consumer brands entering North America }
+          - { zh: 寻找OEM/ODM机会的制造企业, en: Manufacturers seeking OEM/ODM opportunities }
+          - { zh: 希望拓展渠道与零售合作的企业, en: Companies expanding into new distribution and retail channels }
+          - { zh: 需要北美本地代表的公司, en: Businesses requiring a North America local representative }
+        whyUs:
+          - zh: 我们是一家位于温哥华的北美市场进入与执行合作伙伴，具备真实的本地执行能力。
+            en: We are a Vancouver-based North America market entry and execution partner with real on-the-ground capability.
+          - zh: 我们结合中国制造与品牌体系的深度理解，以及北美零售与分销体系的实际经验。
+            en: We combine deep understanding of Chinese manufacturing and brand ecosystems with practical experience in the North American retail and distribution landscape.
+          - zh: 我们的双语与双文化团队能够降低沟通成本，减少执行摩擦，并加速跨境决策效率。
+            en: Our bilingual and bicultural team reduces communication friction, improves execution efficiency, and accelerates cross-border decision-making.
+          - zh: 我们不仅提供建议，更帮助企业在加拿大和美国实现真实市场进入、合作建立与增长执行。
+            en: "We don\u2019t just advise \u2014 we help execute real market entry, partnership development, and business growth in Canada and the United States."
+        ctaTitle:
+          zh: 让我们一起制定你的北美增长战略
+          en: "Let's Build Your North America Growth Strategy"
+        ctaBody:
+          zh: 如果你正在计划进入或拓展加拿大与美国市场，我们很乐意支持你的业务发展。
+          en: If you are planning to enter or expand in Canada and the United States, we would be happy to support your journey.
+        ctaLabel: { zh: 预约咨询, en: Book a Consultation }
+        ctaHref: "#inquiry"
