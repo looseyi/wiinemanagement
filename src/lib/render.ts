@@ -357,8 +357,8 @@ function renderAboutDetail(section, outputPath) {
   let missionHtml = "";
   if (section.mission) {
     missionHtml = `
-      <div class="section ${section.theme === "blue" ? "section-blue section-variant-default" : "section-light section-variant-white"} rounded-[26px] p-8 lg:p-10" data-reveal>
-        <h2 class="m-0 mb-4 text-[clamp(1.65rem,3vw,2.4rem)] font-semibold leading-[1.05] tracking-[-0.04em]">${i18n(section.mission.title)}</h2>
+      <div data-reveal>
+        <h2 class="m-0 mb-6 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]">${i18n(section.mission.title)}</h2>
         <p class="${bodyClass} text-lg leading-relaxed max-w-3xl">${i18n(section.mission.body)}</p>
       </div>
     `;

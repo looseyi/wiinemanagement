@@ -423,14 +423,14 @@ pages:
     masthead:
       eyebrow: { zh: 关于我们, en: About Us }
       title: { zh: 关于 Wilnes Management LTD, en: About Wilnes Management LTD }
-      body: { zh: "", en: "" }
+      body:
+          zh: Wilnes Management LTD 总部位于加拿大温哥华，是一家专注于北美市场进入与业务增长的战略合作伙伴。我们致力于帮助中国品牌与制造企业成功拓展北美市场，通过提供市场进入战略、商业拓展以及本地化执行支持，协助企业实现高效、可持续的海外增长，同时，我们也为北美企业提供中国OEM/ODM供应链对接服务，帮助其寻找经过筛选与验证的优质制造合作伙伴，支持产品开发、贴牌生产以及跨境供应链协作。
+          en: Wilnes Management LTD is a Vancouver-based, North American market-entry and business growth partner. We specialize in helping Chinese brands and manufacturers successfully expand into the Canadian and U.S. markets by providing strategic go-to-market planning, business development, and hands-on local execution. In addition, we support North American companies in sourcing and partnering with verified OEM/ODM manufacturers in China, enabling efficient private-label production, product development, and cross-border supply chain collaboration.
     sections:
       # ── About Detail (Company description + Mission + CTA) ──
       - type: about-detail
         theme: white
-        body:
-          zh: Wilnes Management LTD 总部位于加拿大温哥华，是一家专注于北美市场进入与业务增长的战略合作伙伴。我们致力于帮助中国品牌与制造企业成功拓展北美市场，通过提供市场进入战略、商业拓展以及本地化执行支持，协助企业实现高效、可持续的海外增长，同时，我们也为北美企业提供中国OEM/ODM供应链对接服务，帮助其寻找经过筛选与验证的优质制造合作伙伴，支持产品开发、贴牌生产以及跨境供应链协作。
-          en: Wilnes Management LTD is a Vancouver-based, North American market-entry and business growth partner. We specialize in helping Chinese brands and manufacturers successfully expand into the Canadian and U.S. markets by providing strategic go-to-market planning, business development, and hands-on local execution. In addition, we support North American companies in sourcing and partnering with verified OEM/ODM manufacturers in China, enabling efficient private-label production, product development, and cross-border supply chain collaboration.
+        
         mission:
           title:
             zh: 我们的使命
@@ -438,14 +438,6 @@ pages:
           body:
             zh: 通过战略规划、商业合作与执行落地，助力企业在中国与北美市场之间实现跨境拓展与增长。
             en: To help businesses expand between China and North America through strategy, partnerships, and execution.
-        ctaTitle:
-          zh: 让我们一起制定你的北美增长战略
-          en: "Let's Build Your North America Growth Strategy"
-        ctaBody:
-          zh: 如果你正在计划进入或拓展加拿大与美国市场，我们很乐意支持你的业务发展。
-          en: If you are planning to enter or expand in Canada and the United States, we would be happy to support your journey.
-        ctaLabel: { zh: 预约咨询, en: Book a Consultation }
-        ctaHref: "#inquiry"
 
       # ── Team Section ──
       - type: team

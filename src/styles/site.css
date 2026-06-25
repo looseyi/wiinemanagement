@@ -440,8 +440,17 @@
   }
 
   .section {
-    padding: 96px 0;
+    padding: 120px 0;
     scroll-margin-top: 120px;
+  }
+
+  .section > .section-shell {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .section > .section-shell.space-y-12 {
+    gap: 4rem;
   }
 
   .section-light {
