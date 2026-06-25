@@ -422,9 +422,58 @@ function renderAboutDetail(section, outputPath) {
           <p class="${bodyClass} text-lg leading-relaxed max-w-3xl">${i18n(section.body)}</p>
         </div>
         ${missionHtml}
-        ${teamHtml}
-        ${whyUsHtml}
         ${ctaBox}
+      </div>
+    </section>
+  `;
+}
+
+// ── Team ──
+
+function renderTeam(section, outputPath) {
+  const mutedClass = section.theme === "blue" ? "text-white/82" : "text-[--color-muted]";
+
+  const members = section.members.map((m) => {
+    const photoHtml = m.photo
+      ? `<img class="team-photo" src="${escapeHtml(assetHref(outputPath, m.photo))}" alt="${escapeHtml(m.name)}" loading="lazy">`
+      : `<div class="team-photo-placeholder"></div>`;
+    return `
+      <article class="team-member" data-reveal>
+        <div class="team-photo-wrap">${photoHtml}</div>
+        <div class="team-info">
+          <h3 class="team-name">${escapeHtml(m.name)}</h3>
+          <p class="team-role">${i18n(m.role)}</p>
+          <p class="team-bio ${mutedClass}">${i18n(m.bio)}</p>
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  return `
+    <section class="section ${sectionClass(section.theme)}">
+      <div class="section-shell">
+        <div class="mb-10" data-reveal>
+          ${section.eyebrow ? `<p class="eyebrow ${section.theme === "blue" ? "eyebrow-invert" : ""}">${i18n(section.eyebrow)}</p>` : ""}
+          <h2 class="m-0 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]">${i18n(section.title)}</h2>
+        </div>
+        <div class="team-grid">${members}</div>
+      </div>
+    </section>
+  `;
+}
+
+// ── Why Us ──
+
+function renderWhyUs(section) {
+  const mutedClass = section.theme === "blue" ? "text-white/82" : "text-[--color-muted]";
+
+  const items = section.items.map((item) => `<li class="${mutedClass}">${i18n(item)}</li>`).join("");
+
+  return `
+    <section class="section ${sectionClass(section.theme)}">
+      <div class="section-shell">
+        ${section.eyebrow || section.title ? sectionIntroWide(section) : ""}
+        <ul class="ml-5 list-disc space-y-2.5">${items}</ul>
       </div>
     </section>
   `;
@@ -650,6 +699,10 @@ function renderSection(section, outputPath) {
       return renderCaseStudiesGrid(section, outputPath);
     case "about-detail":
       return renderAboutDetail(section, outputPath);
+    case "team":
+      return renderTeam(section, outputPath);
+    case "why-us":
+      return renderWhyUs(section);
     case "faq":
       return renderFaq(section);
     case "case-study-detail":
