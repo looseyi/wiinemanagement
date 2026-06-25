@@ -9,26 +9,27 @@
 
 # ── Site Metadata ──
 site:
-  name: Wilnes Management LTD
+  name: Wilnes Management
+  legalName: Wilnes Management LTD
   tagline:
-    zh: 北美市场进入与业务增长合作伙伴
-    en: North America Market Entry & Business Growth Partner
+    zh: 您的北美增长合作伙伴
+    en: Your North America Growth Partner
   languageLabel: "EN / 中文"
   ctaLabel:
-    zh: 预约咨询
-    en: Book a Consultation
+    zh: 获取免费咨询
+    en: Get a Free Consultation
   ctaHref: "#inquiry"
   contact:
-    phone: "+1 (778) 555-0188"
-    email: dmiao@laurentian.ca
+    phone: "+1 7783865817"
+    email: contact@wilnemanagement.com
     wechat: Wilne-NorthAmerica
   socialLinks:
     - label: { zh: LinkedIn, en: LinkedIn }
-      href: "#"
+      href: "https://www.linkedin.com/company/wilne-management-ltd/"
     - label: { zh: 微信, en: WeChat }
       href: "#"
     - label: { zh: 邮箱, en: Email }
-      href: "mailto:dmiao@laurentian.ca"
+      href: "mailto:contact@wilnemanagement.com"
 
 # ── Navigation ──
 nav:
@@ -47,6 +48,7 @@ nav:
 
 # ── Footer ──
 footer:
+  copyright: "© 2026 Wilnes Management LTD. All rights reserved."
   title:
     zh: 准备开始您的北美增长战略？
     en: "Let's Build Your North America Growth Strategy"
@@ -115,7 +117,7 @@ pages:
       en: Helping Chinese Brands & Manufacturers Enter and Grow in North America
     description:
       zh: 从市场进入到业务增长，从渠道开发到OEM/ODM合作。
-      en: "From Market Entry to Business Growth \u2014 From Channel Development to OEM/ODM Partnerships."
+      en: "From Market Entry to Business Growth — From Channel Development to OEM/ODM Partnerships."
     hero:
       eyebrow:
         zh: 北美市场进入平台
@@ -135,6 +137,9 @@ pages:
       secondaryCta:
         label: { zh: 了解更多, en: Learn More }
         href: "/solutions/"
+      whitepaperCta:
+        label: { zh: 下载出海白皮书, en: Download Whitepaper }
+        href: "#whitepaper"
       metrics:
         - value: "US + CA"
           label: { zh: 双市场覆盖, en: Dual-market coverage }
@@ -274,60 +279,22 @@ pages:
             body:
               zh: 市场进入策略与定位开发项目
               en: Market entry strategy and positioning development projects
+            href: "/case-studies/market-entry/"
           - title: { zh: 渠道开发案例, en: Distributor Development }
             body:
               zh: 渠道开发与合作获取项目
               en: Channel development and partner acquisition initiatives
+            href: "/case-studies/channel-development/"
           - title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
             body:
               zh: 制造与贴牌合作项目
               en: Manufacturing and private label partnership projects
+            href: "/case-studies/oem-odm/"
           - title: { zh: 社交媒体增长案例, en: Social Media Growth }
             body:
               zh: 数字营销与品牌增长执行项目
               en: Digital marketing and brand growth execution projects
-
-      # ── About Detail (full, from About page — replaces about-cta above) ──
-      - type: about-detail
-        theme: blue
-        body:
-          zh: Wilnes Management LTD 是一家位于加拿大温哥华的北美市场进入与业务增长合作伙伴，专注帮助中国品牌与制造企业进入加拿大及美国市场。我们通过市场战略、业务开发与本地执行支持，帮助企业实现可持续增长。
-          en: Wilnes Management LTD is a Vancouver-based North America market entry and business growth partner helping Chinese brands and manufacturers expand into Canada and the United States. We support companies through strategic market entry, business development, and local execution to enable sustainable growth in North America.
-        whatWeDo:
-          - title: { zh: 市场进入战略, en: Market Entry Strategy }
-            body:
-              zh: 帮助企业明确市场定位，理解北美市场环境，并制定有效的进入策略
-              en: We help companies define their positioning, understand the North American market landscape, and build effective go-to-market strategies.
-          - title: { zh: 业务开发, en: Business Development }
-            body:
-              zh: 为品牌与制造企业对接北美渠道商、零售商及OEM/ODM合作伙伴
-              en: We connect brands and manufacturers with distributors, retailers, and OEM/ODM partners across Canada and the United States.
-          - title: { zh: 增长执行, en: Growth Execution }
-            body:
-              zh: 支持渠道拓展、合作管理及本地市场执行落地
-              en: We support channel development, partnership management, and on-the-ground execution in the North American market.
-        whoWeWorkWith:
-          - { zh: 进入北美市场的中国消费品牌, en: Chinese consumer brands entering North America }
-          - { zh: 寻找OEM/ODM机会的制造企业, en: Manufacturers seeking OEM/ODM opportunities }
-          - { zh: 希望拓展渠道与零售合作的企业, en: Companies expanding into new distribution and retail channels }
-          - { zh: 需要北美本地代表的公司, en: Businesses requiring a North America local representative }
-        whyUs:
-          - zh: 我们是一家位于温哥华的北美市场进入与执行合作伙伴，具备真实的本地执行能力。
-            en: We are a Vancouver-based North America market entry and execution partner with real on-the-ground capability.
-          - zh: 我们结合中国制造与品牌体系的深度理解，以及北美零售与分销体系的实际经验。
-            en: We combine deep understanding of Chinese manufacturing and brand ecosystems with practical experience in the North American retail and distribution landscape.
-          - zh: 我们的双语与双文化团队能够降低沟通成本，减少执行摩擦，并加速跨境决策效率。
-            en: Our bilingual and bicultural team reduces communication friction, improves execution efficiency, and accelerates cross-border decision-making.
-          - zh: 我们不仅提供建议，更帮助企业在加拿大和美国实现真实市场进入、合作建立与增长执行。
-            en: "We don\u2019t just advise \u2014 we help execute real market entry, partnership development, and business growth in Canada and the United States."
-        ctaTitle:
-          zh: 让我们一起制定你的北美增长战略
-          en: "Let's Build Your North America Growth Strategy"
-        ctaBody:
-          zh: 如果你正在计划进入或拓展加拿大与美国市场，我们很乐意支持你的业务发展。
-          en: If you are planning to enter or expand in Canada and the United States, we would be happy to support your journey.
-        ctaLabel: { zh: 预约咨询, en: Book a Consultation }
-        ctaHref: "#inquiry"
+            href: "/case-studies/social-media/"
 
   # ═══════════════════════════ Solutions Page ═══════════════════════════
   - slug: solutions
@@ -430,18 +397,22 @@ pages:
             body:
               zh: 市场进入策略与定位开发项目
               en: Market entry strategy and positioning development projects
+            href: "/case-studies/market-entry/"
           - title: { zh: 渠道开发案例, en: Distributor Development }
             body:
               zh: 渠道开发与合作获取项目
               en: Channel development and partner acquisition initiatives
+            href: "/case-studies/channel-development/"
           - title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
             body:
               zh: 制造与贴牌合作项目
               en: Manufacturing and private label partnership projects
+            href: "/case-studies/oem-odm/"
           - title: { zh: 社交媒体增长案例, en: Social Media Growth }
             body:
               zh: 数字营销与品牌增长执行项目
               en: Digital marketing and brand growth execution projects
+            href: "/case-studies/social-media/"
 
   # ═══════════════════════════ About Page ═══════════════════════════
   - slug: about
@@ -457,26 +428,39 @@ pages:
       - type: about-detail
         theme: white
         body:
-          zh: Wilnes Management LTD 是一家位于加拿大温哥华的北美市场进入与业务增长合作伙伴，专注帮助中国品牌与制造企业进入加拿大及美国市场。我们通过市场战略、业务开发与本地执行支持，帮助企业实现可持续增长。
-          en: Wilnes Management LTD is a Vancouver-based North America market entry and business growth partner helping Chinese brands and manufacturers expand into Canada and the United States. We support companies through strategic market entry, business development, and local execution to enable sustainable growth in North America.
-        whatWeDo:
-          - title: { zh: 市场进入战略, en: Market Entry Strategy }
-            body:
-              zh: 帮助企业明确市场定位，理解北美市场环境，并制定有效的进入策略
-              en: We help companies define their positioning, understand the North American market landscape, and build effective go-to-market strategies.
-          - title: { zh: 业务开发, en: Business Development }
-            body:
-              zh: 为品牌与制造企业对接北美渠道商、零售商及OEM/ODM合作伙伴
-              en: We connect brands and manufacturers with distributors, retailers, and OEM/ODM partners across Canada and the United States.
-          - title: { zh: 增长执行, en: Growth Execution }
-            body:
-              zh: 支持渠道拓展、合作管理及本地市场执行落地
-              en: We support channel development, partnership management, and on-the-ground execution in the North American market.
-        whoWeWorkWith:
-          - { zh: 进入北美市场的中国消费品牌, en: Chinese consumer brands entering North America }
-          - { zh: 寻找OEM/ODM机会的制造企业, en: Manufacturers seeking OEM/ODM opportunities }
-          - { zh: 希望拓展渠道与零售合作的企业, en: Companies expanding into new distribution and retail channels }
-          - { zh: 需要北美本地代表的公司, en: Businesses requiring a North America local representative }
+          zh: Wilnes Management LTD 总部位于加拿大温哥华，是一家专注于北美市场进入与业务增长的战略合作伙伴。我们致力于帮助中国品牌与制造企业成功拓展北美市场，通过提供市场进入战略、商业拓展以及本地化执行支持，协助企业实现高效、可持续的海外增长，同时，我们也为北美企业提供中国OEM/ODM供应链对接服务，帮助其寻找经过筛选与验证的优质制造合作伙伴，支持产品开发、贴牌生产以及跨境供应链协作。
+          en: Wilnes Management LTD is a Vancouver-based, North American market-entry and business growth partner. We specialize in helping Chinese brands and manufacturers successfully expand into the Canadian and U.S. markets by providing strategic go-to-market planning, business development, and hands-on local execution. In addition, we support North American companies in sourcing and partnering with verified OEM/ODM manufacturers in China, enabling efficient private-label production, product development, and cross-border supply chain collaboration.
+        mission:
+          title:
+            zh: 我们的使命
+            en: Our Mission
+          body:
+            zh: 通过战略规划、商业合作与执行落地，助力企业在中国与北美市场之间实现跨境拓展与增长。
+            en: To help businesses expand between China and North America through strategy, partnerships, and execution.
+        team:
+          eyebrow:
+            zh: 我们的团队
+            en: Our Team
+          title:
+            zh: 核心团队
+            en: Leadership Team
+          members:
+            - name: Maggie
+              role:
+                zh: 联合创始人 | 北美市场战略负责人
+                en: Co-Founder | North America Market Strategy Lead
+              bio:
+                zh: 常驻加拿大温哥华，专注北美市场进入策略、品牌定位与业务拓展，帮助中国品牌与制造企业制定清晰的市场进入路径与执行方案。
+                en: Based in Vancouver, Maggie focuses on North America market entry strategy, brand positioning, and business development. She supports Chinese brands and manufacturers in building structured market entry plans and execution strategies.
+              photo: maggie-avatar.jpg
+            - name: Shane
+              role:
+                zh: 联合创始人 | 北美商务拓展负责人
+                en: Co-Founder | North America Business Development Lead
+              bio:
+                zh: 拥有20年以上企业管理与商务拓展经验，专注北美B2B商业合作、渠道开发及跨文化商务沟通，负责本地合作资源对接与项目执行落地。
+                en: With over 20 years of experience in business management and development, Shane specializes in North American B2B partnerships, channel development, and cross-cultural business communication. He leads local partner outreach and supports execution of commercial opportunities in Canada and the U.S.
+              photo: ""
         whyUs:
           - zh: 我们是一家位于温哥华的北美市场进入与执行合作伙伴，具备真实的本地执行能力。
             en: We are a Vancouver-based North America market entry and execution partner with real on-the-ground capability.
@@ -485,7 +469,7 @@ pages:
           - zh: 我们的双语与双文化团队能够降低沟通成本，减少执行摩擦，并加速跨境决策效率。
             en: Our bilingual and bicultural team reduces communication friction, improves execution efficiency, and accelerates cross-border decision-making.
           - zh: 我们不仅提供建议，更帮助企业在加拿大和美国实现真实市场进入、合作建立与增长执行。
-            en: "We don\u2019t just advise \u2014 we help execute real market entry, partnership development, and business growth in Canada and the United States."
+            en: "We don’t just advise — we help execute real market entry, partnership development, and business growth in Canada and the United States."
         ctaTitle:
           zh: 让我们一起制定你的北美增长战略
           en: "Let's Build Your North America Growth Strategy"
@@ -494,3 +478,103 @@ pages:
           en: If you are planning to enter or expand in Canada and the United States, we would be happy to support your journey.
         ctaLabel: { zh: 预约咨询, en: Book a Consultation }
         ctaHref: "#inquiry"
+
+      # ── FAQ Section ──
+      - type: faq
+        theme: blue
+        eyebrow:
+          zh: 常见问题
+          en: FAQ
+        title:
+          zh: 常见问题
+          en: Frequently Asked Questions
+        items:
+          - question:
+              zh: 你们只服务温哥华地区的客户吗？
+              en: Do you only serve clients located in Vancouver?
+            answer:
+              zh: 我们服务范围覆盖整个加拿大和美国市场。
+              en: No. While we are based in Vancouver, our services and coverage extend across the entire Canadian and U.S. markets.
+          - question:
+              zh: 咨询收费吗？
+              en: Is there a fee for the initial consultation?
+            answer:
+              zh: 首次30分钟咨询免费。我们会先了解你的业务和目标，再提出合作方案。
+              en: Your first 30-minute consultation is completely free. This initial session allows us to understand your business, assess your goals, and then present you with a tailored partnership proposal.
+          - question:
+              zh: 我没有任何出海经验，从哪里开始？
+              en: I have zero experience with overseas expansion. Where do I even start?
+            answer:
+              zh: 直接联系我们，告诉我们你的产品和目标市场。我们会帮你梳理清晰路径，从合规到渠道到营销，全程落地支持。
+              en: Just reach out to us! Simply share your product details and target audience, and we'll guide you through the rest. We help you map out a clear roadmap—covering everything from local compliance to sales channels and marketing—and provide end-to-end execution support.
+          - question:
+              zh: 合作流程是怎样的？
+              en: What does the collaboration process look like?
+            answer:
+              zh: 免费咨询 → 方案定制 → 签约启动 → 执行落地 → 持续增长支持。每个阶段我们都会与你同步进展，确保全程透明可控。
+              en: "Our proven process is straightforward: Free Consultation → Customized Proposal → Agreement & Kickoff → Execution & Implementation → Ongoing Growth Support. We keep you informed at every milestone to ensure full transparency and complete peace of mind."
+
+  # ═══════════════════════════ Case Study Detail Pages ═══════════════════════════
+  - slug: case-studies/market-entry
+    title: { zh: 市场进入规划案例, en: Market Entry Planning Case Study }
+    description:
+      zh: 市场进入策略与定位开发项目。
+      en: Market entry strategy and positioning development projects.
+    masthead:
+      eyebrow: { zh: 案例详情, en: Case Study }
+      title: { zh: 市场进入规划案例, en: Market Entry Planning }
+      body: { zh: "", en: "" }
+    sections:
+      - type: case-study-detail
+        theme: white
+        body:
+          zh: 我们正在整理详细的项目案例内容，敬请期待。
+          en: Detailed case study content is being prepared. Stay tuned.
+
+  - slug: case-studies/channel-development
+    title: { zh: 渠道开发案例, en: Distributor Development Case Study }
+    description:
+      zh: 渠道开发与合作获取项目。
+      en: Channel development and partner acquisition initiatives.
+    masthead:
+      eyebrow: { zh: 案例详情, en: Case Study }
+      title: { zh: 渠道开发案例, en: Distributor Development }
+      body: { zh: "", en: "" }
+    sections:
+      - type: case-study-detail
+        theme: white
+        body:
+          zh: 我们正在整理详细的项目案例内容，敬请期待。
+          en: Detailed case study content is being prepared. Stay tuned.
+
+  - slug: case-studies/oem-odm
+    title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development Case Study }
+    description:
+      zh: 制造与贴牌合作项目。
+      en: Manufacturing and private label partnership projects.
+    masthead:
+      eyebrow: { zh: 案例详情, en: Case Study }
+      title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
+      body: { zh: "", en: "" }
+    sections:
+      - type: case-study-detail
+        theme: white
+        body:
+          zh: 我们正在整理详细的项目案例内容，敬请期待。
+          en: Detailed case study content is being prepared. Stay tuned.
+
+  - slug: case-studies/social-media
+    title: { zh: 社交媒体增长案例, en: Social Media Growth Case Study }
+    description:
+      zh: 数字营销与品牌增长执行项目。
+      en: Digital marketing and brand growth execution projects.
+    masthead:
+      eyebrow: { zh: 案例详情, en: Case Study }
+      title: { zh: 社交媒体增长案例, en: Social Media Growth }
+      body: { zh: "", en: "" }
+    sections:
+      - type: case-study-detail
+        theme: white
+        body:
+          zh: 我们正在整理详细的项目案例内容，敬请期待。
+          en: Detailed case study content is being prepared. Stay tuned.

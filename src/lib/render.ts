@@ -1,6 +1,6 @@
 import path from "node:path";
 
-function escapeHtml(value) {
+function escapeHtml(value: unknown): string {
   return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -11,26 +11,35 @@ function escapeHtml(value) {
 
 // ── helpers for bilingual text ──
 
+interface Bilingual {
+  zh: string;
+  en: string;
+}
+
+function isBilingual(value: unknown): value is Bilingual {
+  return typeof value === "object" && value !== null && "zh" in value && "en" in value;
+}
+
 /** Render bilingual text as a span with data-i18n attributes. Falls back to string. */
-function i18n(value, tag = "span") {
+function i18n(value: string | Bilingual | null | undefined, tag = "span") {
   if (typeof value === "string") return escapeHtml(value);
   if (!value || typeof value !== "object") return escapeHtml(String(value ?? ""));
   return `<${tag} data-i18n data-zh="${escapeHtml(value.zh)}" data-en="${escapeHtml(value.en)}">${escapeHtml(value.zh)}</${tag}>`;
 }
 
-function i18nAttr(value, attrName) {
+function i18nAttr(value: string | Bilingual, attrName: string) {
   if (typeof value === "string") return `${attrName}="${escapeHtml(value)}"`;
   return `${attrName}-zh="${escapeHtml(value.zh)}" ${attrName}-en="${escapeHtml(value.en)}"`;
 }
 
 // ── routing ──
 
-function routeToOutputPath(slug) {
+function routeToOutputPath(slug: string) {
   if (!slug) return "index.html";
   return path.posix.join(slug, "index.html");
 }
 
-function hrefToOutputPath(href) {
+function hrefToOutputPath(href: string) {
   if (!href.startsWith("/")) return href;
   if (href === "/") return "index.html";
   const normalized = href.replace(/^\/+|\/+$/g, "");
@@ -38,9 +47,9 @@ function hrefToOutputPath(href) {
   return path.posix.join(normalized, "index.html");
 }
 
-function toRelativeHref(fromOutputPath, targetHref) {
+function toRelativeHref(fromOutputPath: string | null, targetHref: string) {
   if (/^(mailto:|tel:|#|https?:)/.test(targetHref)) return targetHref;
-  const fromDir = path.posix.dirname(fromOutputPath);
+  const fromDir = fromOutputPath ? path.posix.dirname(fromOutputPath) : "";
   const targetOutput = hrefToOutputPath(targetHref);
   let relativePath = path.posix.relative(fromDir, targetOutput);
   if (!relativePath) relativePath = "index.html";
@@ -48,8 +57,8 @@ function toRelativeHref(fromOutputPath, targetHref) {
   return relativePath.replace(/\/index\.html$/, "/");
 }
 
-function assetHref(fromOutputPath, assetName) {
-  const fromDir = path.posix.dirname(fromOutputPath);
+function assetHref(fromOutputPath: string | null, assetName: string) {
+  const fromDir = fromOutputPath ? path.posix.dirname(fromOutputPath) : "";
   let relativePath = path.posix.relative(fromDir, path.posix.join("assets", assetName));
   if (!relativePath.startsWith(".")) relativePath = `./${relativePath}`;
   return relativePath;
@@ -61,7 +70,8 @@ function assetHref(fromOutputPath, assetName) {
 function sectionClass(theme) {
   if (theme === "blue") return "section-blue section-variant-default";
   if (theme === "white") return "section-light section-variant-white";
-  return "section-light"; // default: gray
+  if (theme === "gray") return "section-light";
+  return "section-light";
 }
 
 function renderButton(button, outputPath, variant = "primary") {
@@ -100,7 +110,10 @@ function renderNav(siteData, page, outputPath) {
       <div class="site-header__shell">
         <a class="brand" href="${escapeHtml(toRelativeHref(outputPath, "/"))}">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">${escapeHtml(siteData.site.name)}</span>
+          <span class="brand-text-group">
+            <span class="brand-text">${escapeHtml(siteData.site.name)}</span>
+            <span class="brand-slogan">${i18n(siteData.site.tagline)}</span>
+          </span>
         </a>
         <nav class="site-nav hidden lg:flex" aria-label="Primary">${navItems}</nav>
         <div class="site-header__actions hidden lg:inline-flex">
@@ -141,12 +154,9 @@ function renderNav(siteData, page, outputPath) {
 // ── Hero ──
 
 function renderHero(hero, outputPath) {
-  const metrics = hero.metrics.map((item) => `
-    <div class="execution-canvas__metric" data-reveal>
-      <dt>${i18n(item.label)}</dt>
-      <dd>${escapeHtml(item.value)}</dd>
-    </div>
-  `).join("");
+  const whitepaperBtn = hero.whitepaperCta
+    ? `<a class="button button-ghost" href="${escapeHtml(toRelativeHref(outputPath, hero.whitepaperCta.href))}">${i18n(hero.whitepaperCta.label)}</a>`
+    : "";
 
   return `
     <section class="hero" data-hero>
@@ -162,6 +172,7 @@ function renderHero(hero, outputPath) {
               <div class="hero__actions">
                 ${renderButton(hero.primaryCta, outputPath, "primary")}
                 ${renderButton(hero.secondaryCta, outputPath, "secondary")}
+                ${whitepaperBtn}
               </div>
             </div>
           </div>
@@ -231,7 +242,7 @@ function renderSolutionsOverview(section) {
   `;
 }
 
-// ── About CTA ──
+// ── About CTA (kept for backward compat but not used on homepage) ──
 
 function renderAboutCta(section) {
   return `
@@ -304,13 +315,27 @@ function renderIndustriesGrid(section) {
 
 // ── Case Studies Grid ──
 
-function renderCaseStudiesGrid(section) {
-  const cards = section.cards.map((card) => `
-    <article class="min-h-[180px] rounded-[26px] bg-white p-8 shadow-[0_28px_80px_rgba(15,23,42,0.10)]" data-reveal>
+function renderCaseStudiesGrid(section, outputPath) {
+  const cards = section.cards.map((card) => {
+    const href = card.href || "#";
+    const isLink = href.startsWith("/");
+    const cardInner = `
       <h3 class="mt-0 mb-4 text-[clamp(1.65rem,2.2vw,2.25rem)] leading-[1.1] tracking-[-0.04em]">${i18n(card.title)}</h3>
       <p class="text-[--color-muted]">${i18n(card.body)}</p>
-    </article>
-  `).join("");
+    `;
+    if (isLink) {
+      return `
+        <a href="${escapeHtml(toRelativeHref(outputPath, href))}" class="min-h-[180px] rounded-[26px] bg-white p-8 shadow-[0_28px_80px_rgba(15,23,42,0.10)] block transition hover:-translate-y-1 hover:shadow-[0_32px_90px_rgba(15,23,42,0.14)]" data-reveal>
+          ${cardInner}
+        </a>
+      `;
+    }
+    return `
+      <article class="min-h-[180px] rounded-[26px] bg-white p-8 shadow-[0_28px_80px_rgba(15,23,42,0.10)]" data-reveal>
+        ${cardInner}
+      </article>
+    `;
+  }).join("");
 
   return `
     <section class="section ${sectionClass(section.theme)}">
@@ -324,23 +349,71 @@ function renderCaseStudiesGrid(section) {
 
 // ── About Detail ──
 
-function renderAboutDetail(section) {
+function renderAboutDetail(section, outputPath) {
   const cls = cardClasses(section.theme);
   const mutedClass = section.theme === "blue" ? "text-white/82" : "text-[--color-muted]";
-  const textColor = section.theme === "blue" ? "text-white" : "text-[--color-ink]";
-
-  const whatWeDo = section.whatWeDo.map((item) => `
-    <article class="${cls.article} min-h-[180px]" data-reveal>
-      <h3 class="mt-0 mb-4 text-[clamp(1.65rem,2.2vw,2.25rem)] leading-[1.1] tracking-[-0.04em]">${i18n(item.title)}</h3>
-      <p class="${mutedClass}">${i18n(item.body)}</p>
-    </article>
-  `).join("");
-
-  const whoWeWorkWith = section.whoWeWorkWith.map((item) => `<li class="${mutedClass}">${i18n(item)}</li>`).join("");
-
-  const whyUs = section.whyUs.map((item) => `<li class="${mutedClass}">${i18n(item)}</li>`).join("");
-
   const bodyClass = section.theme === "blue" ? "text-white/82" : "text-[--color-muted]";
+
+  let missionHtml = "";
+  if (section.mission) {
+    missionHtml = `
+      <div class="section ${section.theme === "blue" ? "section-blue section-variant-default" : "section-light section-variant-white"} rounded-[26px] p-8 lg:p-10" data-reveal>
+        <h2 class="m-0 mb-4 text-[clamp(1.65rem,3vw,2.4rem)] font-semibold leading-[1.05] tracking-[-0.04em]">${i18n(section.mission.title)}</h2>
+        <p class="${bodyClass} text-lg leading-relaxed max-w-3xl">${i18n(section.mission.body)}</p>
+      </div>
+    `;
+  }
+
+  let teamHtml = "";
+  if (section.team && section.team.members) {
+    const members = section.team.members.map((m) => {
+      const photoHtml = m.photo
+        ? `<img class="team-photo" src="${escapeHtml(assetHref(outputPath, m.photo))}" alt="${escapeHtml(m.name)}" loading="lazy">`
+        : `<div class="team-photo-placeholder"></div>`;
+      return `
+        <article class="team-member" data-reveal>
+          <div class="team-photo-wrap">${photoHtml}</div>
+          <div class="team-info">
+            <h3 class="team-name">${escapeHtml(m.name)}</h3>
+            <p class="team-role">${i18n(m.role)}</p>
+            <p class="team-bio ${mutedClass}">${i18n(m.bio)}</p>
+          </div>
+        </article>
+      `;
+    }).join("");
+    teamHtml = `
+      <div>
+        <div class="mb-10" data-reveal>
+          ${section.team.eyebrow ? `<p class="eyebrow ${section.theme === "blue" ? "eyebrow-invert" : ""}">${i18n(section.team.eyebrow)}</p>` : ""}
+          <h2 class="m-0 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]">${i18n(section.team.title)}</h2>
+        </div>
+        <div class="team-grid">${members}</div>
+      </div>
+    `;
+  }
+
+  const whyUs = (section.whyUs || []).map((item) => `<li class="${mutedClass}">${i18n(item)}</li>`).join("");
+
+  let whyUsHtml = "";
+  if (whyUs) {
+    whyUsHtml = `
+      <div>
+        <h2 class="m-0 mb-6 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]" data-reveal>${i18n({ zh: "为什么选择我们", en: "Why Work With Us" })}</h2>
+        <ul class="ml-5 list-disc space-y-2.5">${whyUs}</ul>
+      </div>
+    `;
+  }
+
+  let ctaBox = "";
+  if (section.ctaTitle) {
+    ctaBox = `
+      <div class="section section-blue section-variant-default rounded-[26px] p-8" data-reveal>
+        <h2 class="m-0 mb-4 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]">${i18n(section.ctaTitle)}</h2>
+        <p class="text-white/82 mb-6">${i18n(section.ctaBody)}</p>
+        <a class="button button-secondary" href="${escapeHtml(toRelativeHref(outputPath, section.ctaHref))}">${i18n(section.ctaLabel)}</a>
+      </div>
+    `;
+  }
 
   return `
     <section class="section ${sectionClass(section.theme)}">
@@ -348,27 +421,47 @@ function renderAboutDetail(section) {
         <div data-reveal>
           <p class="${bodyClass} text-lg leading-relaxed max-w-3xl">${i18n(section.body)}</p>
         </div>
+        ${missionHtml}
+        ${teamHtml}
+        ${whyUsHtml}
+        ${ctaBox}
+      </div>
+    </section>
+  `;
+}
 
-        <div>
-          <h2 class="m-0 mb-6 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]" data-reveal>${i18n({ zh: "我们做什么", en: "What We Do" })}</h2>
-          <div class="grid gap-6 md:grid-cols-3">${whatWeDo}</div>
-        </div>
+// ── FAQ ──
 
-        <div>
-          <h2 class="m-0 mb-6 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]" data-reveal>${i18n({ zh: "我们的客户", en: "Who We Work With" })}</h2>
-          <ul class="ml-5 list-disc space-y-2.5">${whoWeWorkWith}</ul>
-        </div>
+function renderFaq(section) {
+  const items = section.items.map((item, index) => `
+    <details class="faq-item" data-reveal>
+      <summary class="faq-question">
+        <span>${i18n(item.question)}</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="faq-answer">
+        <p>${i18n(item.answer)}</p>
+      </div>
+    </details>
+  `).join("");
 
-        <div>
-          <h2 class="m-0 mb-6 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]" data-reveal>${i18n({ zh: "为什么选择我们", en: "Why Work With Us" })}</h2>
-          <ul class="ml-5 list-disc space-y-2.5">${whyUs}</ul>
-        </div>
+  return `
+    <section class="section ${sectionClass(section.theme)}">
+      <div class="section-shell">
+        ${sectionIntroWide(section)}
+        <div class="faq-list">${items}</div>
+      </div>
+    </section>
+  `;
+}
 
-        <div class="section section-blue section-variant-default rounded-[26px] p-8" data-reveal>
-          <h2 class="m-0 mb-4 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]">${i18n(section.ctaTitle)}</h2>
-          <p class="text-white/82 mb-6">${i18n(section.ctaBody)}</p>
-          <a class="button button-secondary" href="${escapeHtml(toRelativeHref(null, section.ctaHref))}">${i18n(section.ctaLabel)}</a>
-        </div>
+// ── Case Study Detail ──
+
+function renderCaseStudyDetail(section) {
+  return `
+    <section class="section ${sectionClass(section.theme)}">
+      <div class="section-shell" data-reveal>
+        <p class="text-[--color-muted] text-lg leading-relaxed">${i18n(section.body)}</p>
       </div>
     </section>
   `;
@@ -508,6 +601,8 @@ function renderFooter(siteData, outputPath) {
     `<a class="text-white/76" href="${escapeHtml(toRelativeHref(outputPath, item.href))}">${i18n(item.label)}</a>`
   ).join("");
 
+  const copyright = siteData.footer.copyright || `© 2026 ${escapeHtml(siteData.site.legalName || siteData.site.name)}. All rights reserved.`;
+
   return `
     <footer class="site-footer">
       <div class="site-footer__cta section-shell" data-reveal>
@@ -530,11 +625,8 @@ function renderFooter(siteData, outputPath) {
         </div>
         <div class="footer-links-grid">${columns}${contactCol}</div>
       </div>
-      <div class="section-shell mt-8 border-t border-white/14 pt-6 text-sm text-white/72" data-reveal>
-        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <p class="m-0">${escapeHtml(siteData.site.name)}</p>
-          <p class="m-0">${tagline}</p>
-        </div>
+      <div class="section-shell mt-8 border-t border-white/14 pt-6" data-reveal>
+        <p class="footer-copyright">${escapeHtml(copyright)}</p>
       </div>
     </footer>
   `;
@@ -542,7 +634,7 @@ function renderFooter(siteData, outputPath) {
 
 // ── Section dispatch ──
 
-function renderSection(section) {
+function renderSection(section, outputPath) {
   switch (section.type) {
     case "who-we-help":
       return renderWhoWeHelp(section);
@@ -555,9 +647,13 @@ function renderSection(section) {
     case "industries-grid":
       return renderIndustriesGrid(section);
     case "case-studies-grid":
-      return renderCaseStudiesGrid(section);
+      return renderCaseStudiesGrid(section, outputPath);
     case "about-detail":
-      return renderAboutDetail(section);
+      return renderAboutDetail(section, outputPath);
+    case "faq":
+      return renderFaq(section);
+    case "case-study-detail":
+      return renderCaseStudyDetail(section);
     default:
       throw new Error(`Unknown section type: ${section.type}`);
   }
@@ -571,17 +667,16 @@ function renderPage(page, siteData) {
 
   let pageBody;
   if (page.hero && page.sections.length > 0) {
-    // Parallax: first section overlaps hero, rest follow normally
     const [firstSection, ...restSections] = page.sections;
-    const firstHtml = renderSection(firstSection);
-    const restHtml = restSections.map((s) => renderSection(s)).join("");
+    const firstHtml = renderSection(firstSection, outputPath);
+    const restHtml = restSections.map((s) => renderSection(s, outputPath)).join("");
     pageBody = `
       <div class="section-execution-canvas">
         ${firstHtml}
       </div>
       ${restHtml}`;
   } else {
-    pageBody = page.sections.map((s) => renderSection(s)).join("");
+    pageBody = page.sections.map((s) => renderSection(s, outputPath)).join("");
   }
 
   const titleZh = escapeHtml(typeof page.title === "object" ? page.title.zh : page.title);
