@@ -207,7 +207,33 @@ function setupLeadForms() {
         return;
       }
 
-      form.reset();
+      // Build mailto link
+      const fd = new FormData(form);
+      const name = fd.get("name") || "";
+      const email = fd.get("email") || "";
+      const industry = fd.get("industry") || "";
+      const company = fd.get("company") || "";
+      const phone = fd.get("phone") || "";
+      const stage = fd.get("stage") || "";
+      const market = fd.get("market") || "";
+      const message = fd.get("message") || "";
+      const needs = fd.getAll("needs").join(", ");
+
+      const subject = `[Wilnes] Inquiry from ${name} (${company})`;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Industry: ${industry}`,
+        `Company: ${company}`,
+        `Phone: ${phone}`,
+        `Stage: ${stage}`,
+        `Target Market: ${market}`,
+        `Needs: ${needs}`,
+        `Message: ${message}`,
+      ].join("\n");
+
+      const mailtoUrl = `mailto:dmiao@laurentian.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
 
       if (status) {
         status.textContent = form.dataset[`success${locale === "en" ? "En" : "Zh"}`];
