@@ -416,7 +416,7 @@ pages:
 
   # ═══════════════════════════ About Page ═══════════════════════════
   - slug: about
-    title: { zh: 关于我们, en: About }
+    # title: { zh: 关于我们, en: About }
     description:
       zh: Wilnes Management LTD — 北美市场进入与业务增长合作伙伴。
       en: Wilnes Management LTD — North America market entry and business growth partner.
@@ -430,7 +430,6 @@ pages:
       # ── About Detail (Company description + Mission + CTA) ──
       - type: about-detail
         theme: white
-        
         mission:
           title:
             zh: 我们的使命
@@ -438,34 +437,31 @@ pages:
           body:
             zh: 通过战略规划、商业合作与执行落地，助力企业在中国与北美市场之间实现跨境拓展与增长。
             en: To help businesses expand between China and North America through strategy, partnerships, and execution.
+        team:
+          eyebrow:
+            zh: 我们的团队
+            en: Our Team
+          title:
+            zh: 核心团队
+            en: Leadership Team
+          members:
+            - name: Maggie
+              role:
+                zh: 联合创始人 | 北美市场战略负责人
+                en: Co-Founder | North America Market Strategy Lead
+              bio:
+                zh: 常驻加拿大温哥华，专注北美市场进入策略、品牌定位与业务拓展，帮助中国品牌与制造企业制定清晰的市场进入路径与执行方案。
+                en: Based in Vancouver, Maggie focuses on North America market entry strategy, brand positioning, and business development. She supports Chinese brands and manufacturers in building structured market entry plans and execution strategies.
+              photo: maggie-avatar.jpg
+            - name: Shane
+              role:
+                zh: 联合创始人 | 北美商务拓展负责人
+                en: Co-Founder | North America Business Development Lead
+              bio:
+                zh: 拥有20年以上企业管理与商务拓展经验，专注北美B2B商业合作、渠道开发及跨文化商务沟通，负责本地合作资源对接与项目执行落地。
+                en: With over 20 years of experience in business management and development, Shane specializes in North American B2B partnerships, channel development, and cross-cultural business communication. He leads local partner outreach and supports execution of commercial opportunities in Canada and the U.S.
+              photo: ""
 
-      # ── Team Section ──
-      - type: team
-        eyebrow:
-          zh: 我们的团队
-          en: Our Team
-        title:
-          zh: 核心团队
-          en: Leadership Team
-        members:
-          - name: Maggie
-            role:
-              zh: 联合创始人 | 北美市场战略负责人
-              en: Co-Founder | North America Market Strategy Lead
-            bio:
-              zh: 常驻加拿大温哥华，专注北美市场进入策略、品牌定位与业务拓展，帮助中国品牌与制造企业制定清晰的市场进入路径与执行方案。
-              en: Based in Vancouver, Maggie focuses on North America market entry strategy, brand positioning, and business development. She supports Chinese brands and manufacturers in building structured market entry plans and execution strategies.
-            photo: maggie-avatar.jpg
-          - name: Shane
-            role:
-              zh: 联合创始人 | 北美商务拓展负责人
-              en: Co-Founder | North America Business Development Lead
-            bio:
-              zh: 拥有20年以上企业管理与商务拓展经验，专注北美B2B商业合作、渠道开发及跨文化商务沟通，负责本地合作资源对接与项目执行落地。
-              en: With over 20 years of experience in business management and development, Shane specializes in North American B2B partnerships, channel development, and cross-cultural business communication. He leads local partner outreach and supports execution of commercial opportunities in Canada and the U.S.
-            photo: ""
-
-      # ── Why Us Section ──
       - type: why-us
         theme: white
         eyebrow:

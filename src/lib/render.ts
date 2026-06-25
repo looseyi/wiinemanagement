@@ -392,18 +392,6 @@ function renderAboutDetail(section, outputPath) {
     `;
   }
 
-  const whyUs = (section.whyUs || []).map((item) => `<li class="${mutedClass}">${i18n(item)}</li>`).join("");
-
-  let whyUsHtml = "";
-  if (whyUs) {
-    whyUsHtml = `
-      <div>
-        <h2 class="m-0 mb-6 text-[clamp(1.95rem,4vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.05em]" data-reveal>${i18n({ zh: "为什么选择我们", en: "Why Work With Us" })}</h2>
-        <ul class="ml-5 list-disc space-y-2.5">${whyUs}</ul>
-      </div>
-    `;
-  }
-
   let ctaBox = "";
   if (section.ctaTitle) {
     ctaBox = `
@@ -422,6 +410,7 @@ function renderAboutDetail(section, outputPath) {
           <p class="${bodyClass} text-lg leading-relaxed max-w-3xl">${i18n(section.body)}</p>
         </div>
         ${missionHtml}
+        ${teamHtml}
         ${ctaBox}
       </div>
     </section>
