@@ -115,15 +115,11 @@
   }
 
   .brand-mark {
-    @apply h-3 w-3 rounded-[3px];
-    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+    @apply h-7 w-7 rounded-[6px] object-cover block;
   }
 
-  .site-header[data-state="scrolled"] .brand-mark,
-  .site-header[data-state="inner"] .brand-mark,
-  .site-header[data-hovered="true"] .brand-mark,
   .brand-footer .brand-mark {
+    @apply h-3 w-3 rounded-[3px];
     background: linear-gradient(135deg, #9aa3b1, #4b5562);
     box-shadow: none;
   }

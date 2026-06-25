@@ -441,7 +441,6 @@ pages:
 
       # ── Team Section ──
       - type: team
-        theme: blue
         eyebrow:
           zh: 我们的团队
           en: Our Team

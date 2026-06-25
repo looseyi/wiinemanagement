@@ -109,7 +109,7 @@ function renderNav(siteData, page, outputPath) {
     <header class="site-header" data-site-nav data-state="${page.hero ? "hero" : "inner"}">
       <div class="site-header__shell">
         <a class="brand" href="${escapeHtml(toRelativeHref(outputPath, "/"))}">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img class="brand-mark" src="${escapeHtml(assetHref(outputPath, "logo.jpg"))}" alt="" aria-hidden="true">
           <span class="brand-text-group">
             <span class="brand-text">${escapeHtml(siteData.site.name)}</span>
             <span class="brand-slogan">${i18n(siteData.site.tagline)}</span>
