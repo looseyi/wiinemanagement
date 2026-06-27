@@ -42,8 +42,11 @@ function routeToOutputPath(slug: string) {
 function hrefToOutputPath(href: string) {
   if (!href.startsWith("/")) return href;
   if (href === "/") return "index.html";
-  const normalized = href.replace(/^\/+|\/+$/g, "");
+  const normalized = href.replace(/^[/]+|[/]+$/g, "");
   if (!normalized) return "index.html";
+  // If the last segment has a file extension (e.g. .pdf, .png), treat as a direct file path
+  const lastSegment = normalized.split("/").pop() ?? "";
+  if (lastSegment.includes(".")) return normalized;
   return path.posix.join(normalized, "index.html");
 }
 
@@ -155,7 +158,7 @@ function renderNav(siteData, page, outputPath) {
 
 function renderHero(hero, outputPath) {
   const whitepaperBtn = hero.whitepaperCta
-    ? `<a class="button button-ghost" href="${escapeHtml(toRelativeHref(outputPath, hero.whitepaperCta.href))}">${i18n(hero.whitepaperCta.label)}</a>`
+    ? `<a class="button button-ghost" href="${escapeHtml(toRelativeHref(outputPath, hero.whitepaperCta.href))}" download>${i18n(hero.whitepaperCta.label)}</a>`
     : "";
 
   return `
