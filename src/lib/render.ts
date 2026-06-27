@@ -505,6 +505,52 @@ function renderCaseStudyDetail(section) {
   `;
 }
 
+// ── Case Study Full ──
+
+function renderCaseStudyFull(section) {
+  const cls = "text-[--color-muted]";
+
+  function blockHtml(block) {
+    if (!block) return "";
+    if (block.type === "metrics") {
+      const items = (block.items || []).map((m) => `
+        <div class="rounded-[20px] border border-black/10 bg-[#f0f5fc] px-5 py-4">
+          <p class="m-0 font-semibold text-[--color-ink]">${i18n(m.label)}</p>
+          <p class="m-0 ${cls}">${i18n(m.value)}</p>
+        </div>`).join("");
+      return `<div class="grid gap-4 md:grid-cols-3 mb-8">${items}</div>`;
+    }
+    if (block.type === "section") {
+      const items = (block.items || []).map((it) => `<li class="${cls}">${i18n(it)}</li>`).join("");
+      const list = items ? `<ul class="ml-5 list-disc space-y-2">${items}</ul>` : "";
+      const body = block.body ? `<p class="${cls} leading-relaxed">${i18n(block.body)}</p>` : "";
+      return `
+        <div class="mb-8" data-reveal>
+          <h2 class="text-[clamp(1.4rem,2.5vw,1.9rem)] font-semibold tracking-[-0.03em] mb-3">${i18n(block.title)}</h2>
+          ${body}${list}
+        </div>`;
+    }
+    if (block.type === "status") {
+      return `
+        <div class="rounded-[20px] bg-[#f0f5fc] border border-black/10 px-6 py-4 mb-8" data-reveal>
+          <p class="m-0 font-semibold text-[--color-ink] mb-1">${i18n(block.label)}</p>
+          <p class="m-0 ${cls}">${i18n(block.value)}</p>
+        </div>`;
+    }
+    return "";
+  }
+
+  const blocksHtml = (section.blocks || []).map(blockHtml).join("");
+
+  return `
+    <section class="section ${sectionClass(section.theme)}">
+      <div class="section-shell">
+        ${blocksHtml}
+      </div>
+    </section>
+  `;
+}
+
 // ── Form ──
 
 function renderInquiryForm(siteData) {
@@ -696,6 +742,8 @@ function renderSection(section, outputPath) {
       return renderFaq(section);
     case "case-study-detail":
       return renderCaseStudyDetail(section);
+    case "case-study-full":
+      return renderCaseStudyFull(section);
     default:
       throw new Error(`Unknown section type: ${section.type}`);
   }

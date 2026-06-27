@@ -1,5 +1,5 @@
 # ──────────────────────────────────────────────────
-# Wilnes Management LTD — Site Configuration
+# Wilne Management LTD — Site Configuration
 # ──────────────────────────────────────────────────
 # Edit this file to customize the entire website.
 # Run `npm run build` after changes, then deploy dist/.
@@ -9,8 +9,8 @@
 
 # ── Site Metadata ──
 site:
-  name: Wilnes Management
-  legalName: Wilnes Management LTD
+  name: Wilne Management
+  legalName: Wilne Management LTD
   tagline:
     zh: 您的北美增长合作伙伴
     en: Your North America Growth Partner
@@ -22,7 +22,7 @@ site:
   contact:
     phone: "+1 7783865817"
     email: contact@wilnemanagement.com
-    wechat: Wilne-NorthAmerica
+    wechat: WilneManagement
   socialLinks:
     - label: { zh: LinkedIn, en: LinkedIn }
       href: "https://www.linkedin.com/company/wilne-management-ltd/"
@@ -48,7 +48,7 @@ nav:
 
 # ── Footer ──
 footer:
-  copyright: "© 2026 Wilnes Management LTD. All rights reserved."
+  copyright: "© 2026 Wilne Management LTD. All rights reserved."
   title:
     zh: 准备开始您的北美增长战略？
     en: "Let's Build Your North America Growth Strategy"
@@ -139,7 +139,7 @@ pages:
         href: "/solutions/"
       whitepaperCta:
         label: { zh: 下载出海白皮书, en: Download Whitepaper }
-        href: "#whitepaper"
+        href: "/assets/North_America_White_Paper_2026.pdf"
       metrics:
         - value: "US + CA"
           label: { zh: 双市场覆盖, en: Dual-market coverage }
@@ -275,26 +275,21 @@ pages:
         eyebrow: { zh: 案例, en: Case Studies }
         title: { zh: 我们的项目案例, en: Our Case Studies }
         cards:
-          - title: { zh: 市场进入规划案例, en: Market Entry Planning }
+          - title: { zh: "护肤品牌北美冷启动", en: "90-Day North America GTM Launch" }
             body:
-              zh: 市场进入策略与定位开发项目
-              en: Market entry strategy and positioning development projects
-            href: "/case-studies/market-entry/"
-          - title: { zh: 渠道开发案例, en: Distributor Development }
+              zh: 协助中国护肤品牌 90 天内跑通北美市场"0到1"冷启动
+              en: Helped a Chinese skincare brand complete a full North America market entry in 90 days
+            href: "/case-studies/gtm-launch/"
+          - title: { zh: "精品买手店自有品牌供应链开发", en: "Private Label Supply Chain Setup" }
             body:
-              zh: 渠道开发与合作获取项目
-              en: Channel development and partner acquisition initiatives
-            href: "/case-studies/channel-development/"
-          - title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
+              zh: 加拿大精品买手店 · 自有品牌供应链开发
+              en: Sourced and onboarded verified Chinese manufacturers for a Vancouver beauty buyer's private label line
+            href: "/case-studies/private-label/"
+          - title: { zh: "北美商务代表服务", en: "North America Business Representative" }
             body:
-              zh: 制造与贴牌合作项目
-              en: Manufacturing and private label partnership projects
-            href: "/case-studies/oem-odm/"
-          - title: { zh: 社交媒体增长案例, en: Social Media Growth }
-            body:
-              zh: 数字营销与品牌增长执行项目
-              en: Digital marketing and brand growth execution projects
-            href: "/case-studies/social-media/"
+              zh: 为中国护肤品牌提供持续的北美本地商务代表与渠道拓展支持
+              en: Ongoing North America business representation and retail channel development for a Chinese skincare brand
+            href: "/case-studies/biz-representative/"
 
   # ═══════════════════════════ Solutions Page ═══════════════════════════
   - slug: solutions
@@ -393,39 +388,34 @@ pages:
       - type: case-studies-grid
         theme: white
         cards:
-          - title: { zh: 市场进入规划案例, en: Market Entry Planning }
+          - title: { zh: "护肤品牌北美冷启动", en: "90-Day North America GTM Launch" }
             body:
-              zh: 市场进入策略与定位开发项目
-              en: Market entry strategy and positioning development projects
-            href: "/case-studies/market-entry/"
-          - title: { zh: 渠道开发案例, en: Distributor Development }
+              zh: 协助中国护肤品牌 90 天内跑通北美市场"0到1"冷启动
+              en: Helped a Chinese skincare brand complete a full North America market entry in 90 days
+            href: "/case-studies/gtm-launch/"
+          - title: { zh: "精品买手店自有品牌供应链开发", en: "Private Label Supply Chain Setup" }
             body:
-              zh: 渠道开发与合作获取项目
-              en: Channel development and partner acquisition initiatives
-            href: "/case-studies/channel-development/"
-          - title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
+              zh: 加拿大精品买手店 · 自有品牌供应链开发
+              en: Sourced and onboarded verified Chinese manufacturers for a Vancouver beauty buyer's private label line
+            href: "/case-studies/private-label/"
+          - title: { zh: "北美商务代表服务", en: "North America Business Representative" }
             body:
-              zh: 制造与贴牌合作项目
-              en: Manufacturing and private label partnership projects
-            href: "/case-studies/oem-odm/"
-          - title: { zh: 社交媒体增长案例, en: Social Media Growth }
-            body:
-              zh: 数字营销与品牌增长执行项目
-              en: Digital marketing and brand growth execution projects
-            href: "/case-studies/social-media/"
+              zh: 为中国护肤品牌提供持续的北美本地商务代表与渠道拓展支持
+              en: Ongoing North America business representation and retail channel development for a Chinese skincare brand
+            href: "/case-studies/biz-representative/"
 
   # ═══════════════════════════ About Page ═══════════════════════════
   - slug: about
     # title: { zh: 关于我们, en: About }
     description:
-      zh: Wilnes Management LTD — 北美市场进入与业务增长合作伙伴。
-      en: Wilnes Management LTD — North America market entry and business growth partner.
+      zh: Wilne Management LTD — 北美市场进入与业务增长合作伙伴。
+      en: Wilne Management LTD — North America market entry and business growth partner.
     masthead:
       eyebrow: { zh: 关于我们, en: About Us }
-      title: { zh: 关于 Wilnes Management LTD, en: About Wilnes Management LTD }
+      title: { zh: 关于 Wilne Management LTD, en: About Wilne Management LTD }
       body:
-          zh: Wilnes Management LTD 总部位于加拿大温哥华，是一家专注于北美市场进入与业务增长的战略合作伙伴。我们致力于帮助中国品牌与制造企业成功拓展北美市场，通过提供市场进入战略、商业拓展以及本地化执行支持，协助企业实现高效、可持续的海外增长，同时，我们也为北美企业提供中国OEM/ODM供应链对接服务，帮助其寻找经过筛选与验证的优质制造合作伙伴，支持产品开发、贴牌生产以及跨境供应链协作。
-          en: Wilnes Management LTD is a Vancouver-based, North American market-entry and business growth partner. We specialize in helping Chinese brands and manufacturers successfully expand into the Canadian and U.S. markets by providing strategic go-to-market planning, business development, and hands-on local execution. In addition, we support North American companies in sourcing and partnering with verified OEM/ODM manufacturers in China, enabling efficient private-label production, product development, and cross-border supply chain collaboration.
+          zh: Wilne Management LTD 总部位于加拿大温哥华，是一家专注于北美市场进入与业务增长的战略合作伙伴。我们致力于帮助中国品牌与制造企业成功拓展北美市场，通过提供市场进入战略、商业拓展以及本地化执行支持，协助企业实现高效、可持续的海外增长，同时，我们也为北美企业提供中国OEM/ODM供应链对接服务，帮助其寻找经过筛选与验证的优质制造合作伙伴，支持产品开发、贴牌生产以及跨境供应链协作。
+          en: Wilne Management LTD is a Vancouver-based, North American market-entry and business growth partner. We specialize in helping Chinese brands and manufacturers successfully expand into the Canadian and U.S. markets by providing strategic go-to-market planning, business development, and hands-on local execution. In addition, we support North American companies in sourcing and partnering with verified OEM/ODM manufacturers in China, enabling efficient private-label production, product development, and cross-border supply chain collaboration.
     sections:
       # ── About Detail (Company description + Mission + CTA) ──
       - type: about-detail
@@ -517,66 +507,172 @@ pages:
               en: "Our proven process is straightforward: Free Consultation → Customized Proposal → Agreement & Kickoff → Execution & Implementation → Ongoing Growth Support. We keep you informed at every milestone to ensure full transparency and complete peace of mind."
 
   # ═══════════════════════════ Case Study Detail Pages ═══════════════════════════
-  - slug: case-studies/market-entry
-    title: { zh: 市场进入规划案例, en: Market Entry Planning Case Study }
+  - slug: case-studies/gtm-launch
+    title: { zh: "护肤品牌北美冷启动", en: "90-Day North America GTM Launch" }
     description:
-      zh: 市场进入策略与定位开发项目。
-      en: Market entry strategy and positioning development projects.
+      zh: 协助中国护肤品牌 90 天内跑通北美市场冷启动全链路。
+      en: Helped a Chinese skincare brand complete a full North America market entry in 90 days.
     masthead:
       eyebrow: { zh: 案例详情, en: Case Study }
-      title: { zh: 市场进入规划案例, en: Market Entry Planning }
+      title: { zh: "护肤品牌北美冷启动", en: "90-Day North America GTM Launch" }
       body: { zh: "", en: "" }
     sections:
-      - type: case-study-detail
+      - type: case-study-full
         theme: white
-        body:
-          zh: 我们正在整理详细的项目案例内容，敬请期待。
-          en: Detailed case study content is being prepared. Stay tuned.
+        blocks:
+          - type: metrics
+            items:
+              - label: { zh: 启动周期, en: Time-to-Market }
+                value: { zh: 90天完成市场进入准备, en: 90 Days }
+              - label: { zh: 合规落地, en: Compliance }
+                value: { zh: Health Canada & FDA 双认证支持, en: Health Canada & U.S. FDA cleared }
+              - label: { zh: 商务进展, en: BD Pipeline }
+                value: { zh: 成功推进 5 家本土主力零售/分销商谈, en: Initiated negotiations with 5 major regional retailers/distributors }
+          - type: section
+            title: { zh: 一、客户背景, en: Background }
+            body:
+              zh: 某国产中高端功效护肤品牌（拥有8个核心SKU），在没有海外团队、也没有国际市场运营经验的情况下，希望进入加拿大及美国市场。该品牌在国内具备一定市场基础，但在北美市场尚无品牌认知、渠道资源及销售网络。
+              en: A mid-to-high-end Chinese skincare brand with 8 SKUs sought to enter the Canadian and U.S. markets without any overseas team or prior international operating experience. While the brand had strong domestic performance, it had no presence, distribution, or awareness in North America.
+          - type: section
+            title: { zh: 二、项目挑战, en: Challenge }
+            items:
+              - { zh: 北美市场品牌认知度为零, en: Zero brand awareness in North American market }
+              - { zh: 缺乏现有分销商及零售渠道资源, en: No existing distributor or retail network }
+              - { zh: 产品配方需符合加拿大 Health Canada 化妆品法规, en: Product formulation required compliance with Health Canada cosmetic regulations }
+              - { zh: 团队英语商务沟通能力有限，缺乏海外运营经验, en: Limited English communication capability within internal team }
+          - type: section
+            title: { zh: 三、我们的解决方案, en: Our Strategy }
+            items:
+              - { zh: 协助完成加拿大 Health Canada 及美国 FDA 化妆品合规支持, en: Health Canada + U.S. FDA cosmetic regulatory compliance support }
+              - { zh: 北美市场调研及竞品分析与定位策略制定, en: North American market research and competitive positioning strategy }
+              - { zh: 搭建Shopify英文独立站并完成基础本地化优化, en: Shopify-based English e-commerce store development }
+              - { zh: 制定Instagram与TikTok社媒市场进入策略, en: Instagram & TikTok go-to-market strategy }
+              - { zh: 执行KOL/KOC种草投放（200份样品）, en: Influencer seeding campaign (200 KOL/KOC samples) }
+              - { zh: 对接加拿大零售买手及区域分销渠道, en: Initial outreach to Canadian retail buyers and regional distributors }
+          - type: section
+            title: { zh: 四、执行过程, en: Implementation }
+            items:
+              - { zh: 完成加拿大及美国市场合规资料准备与备案支持, en: Completed regulatory compliance documentation for Canada and the U.S. }
+              - { zh: 搭建并上线Shopify独立站，完成本地化品牌呈现, en: Built and launched Shopify storefront with localized positioning }
+              - { zh: 执行200份红人样品投放计划, en: Executed influencer seeding campaign (200 samples distributed) }
+              - { zh: 启动3个零售渠道及2个分销商的商务沟通, en: Initiated discussions with 3 retail channels and 2 distributors }
+              - { zh: 收集北美首批真实用户反馈, en: Collected first wave of real consumer feedback from North American users }
+          - type: section
+            title: { zh: 五、项目成果, en: Results }
+            items:
+              - { zh: 跑通北美市场"合规-冷启动-渠道拓展"全链路闭环, en: Successfully completed initial North America market entry phase }
+              - { zh: 成功搭建北美本土零售及分销商准入管线, en: Established an initial retail and distributor pipeline }
+              - { zh: 通过精准红人置换，获取首批核心目标市场的真实用户好评与测品反馈, en: Generated real consumer feedback from target market }
+              - { zh: 项目正式进入商业合作与渠道谈判阶段, en: Moved into commercial negotiation phase }
+          - type: status
+            label: { zh: 当前状态, en: Current Status }
+            value:
+              zh: 进行中 — 合规完成，独立站已上线，红人投放已执行，目前处于分销商谈判阶段。
+              en: "Ongoing — Compliance completed, store launched, influencer campaign executed, currently in distributor negotiation stage."
 
-  - slug: case-studies/channel-development
-    title: { zh: 渠道开发案例, en: Distributor Development Case Study }
+  - slug: case-studies/private-label
+    title: { zh: "精品买手店自有品牌供应链开发", en: "Private Label Supply Chain Setup" }
     description:
-      zh: 渠道开发与合作获取项目。
-      en: Channel development and partner acquisition initiatives.
+      zh: 加拿大精品买手店 · 自有品牌供应链开发。
+      en: Sourced and onboarded verified Chinese manufacturers for a Vancouver beauty buyer's private label line.
     masthead:
       eyebrow: { zh: 案例详情, en: Case Study }
-      title: { zh: 渠道开发案例, en: Distributor Development }
+      title: { zh: "精品买手店自有品牌供应链开发", en: "Private Label Supply Chain Setup for a Vancouver Beauty Buyer" }
       body: { zh: "", en: "" }
     sections:
-      - type: case-study-detail
+      - type: case-study-full
         theme: white
-        body:
-          zh: 我们正在整理详细的项目案例内容，敬请期待。
-          en: Detailed case study content is being prepared. Stay tuned.
+        blocks:
+          - type: section
+            title: { zh: 一、客户背景, en: Background }
+            body:
+              zh: 温哥华某精品美妆买手店计划开发自有品牌产品线，但缺乏中国供应链资源及跨境采购经验。
+              en: A boutique beauty buyer store based in Vancouver aimed to develop its own private label product line but lacked access to reliable Chinese manufacturers and cross-border sourcing experience.
+          - type: section
+            title: { zh: 二、项目挑战, en: Challenge }
+            items:
+              - { zh: 缺乏可靠的中国化妆品代工厂资源, en: No direct access to verified cosmetic manufacturers in China }
+              - { zh: 缺乏系统化供应商筛选与评估体系, en: Lack of structured supplier evaluation system }
+              - { zh: 缺乏跨境采购及质量控制经验, en: No cross-border sourcing or quality control experience }
+              - { zh: 缺乏产品开发流程管理能力, en: No established product development workflow }
+          - type: section
+            title: { zh: 三、我们的解决方案, en: Our Strategy }
+            items:
+              - { zh: 在华东地区筛选并对接化妆品代工厂资源, en: Sourcing and screening cosmetic manufacturers in East China }
+              - { zh: 根据产品需求及预算筛选3家合格工厂, en: Shortlisting 3 qualified factories based on product requirements and budget }
+              - { zh: 协调样品开发及跨境物流交付, en: Coordinating sample development and international logistics }
+              - { zh: 制作英文供应商能力介绍资料（Capability Deck）, en: Developing English capability decks for supplier communication }
+              - { zh: 提供MOQ、价格及质量标准等商务谈判支持, en: Supporting commercial negotiation (MOQ, pricing, QC standards) }
+          - type: section
+            title: { zh: 四、执行过程, en: Implementation }
+            items:
+              - { zh: 在中国筛选并评估3家符合要求的化妆品代工厂, en: Identified and evaluated 3 manufacturing partners in China }
+              - { zh: 协调样品打样及跨境寄送全流程, en: Coordinated sampling and cross-border delivery process }
+              - { zh: 负责客户与工厂之间的中英双语沟通对接, en: Facilitated bilingual communication between buyer and factories }
+              - { zh: 整理工厂能力资料（产能、资质、生产体系等），用于决策判断, en: Structured supplier capability documentation for decision-making }
+              - { zh: 协助搭建初步商务对接与报价沟通框架, en: Supported initial commercial negotiation framework }
+          - type: section
+            title: { zh: 五、项目成果, en: Results }
+            items:
+              - { zh: 成功筛选出3家符合条件的代工厂并进入候选名单, en: 3 manufacturers successfully shortlisted }
+              - { zh: 完成样品开发并顺利寄送至加拿大客户, en: Sample development completed and shipped to Canada }
+              - { zh: 协助客户建立起一套标准化的海外供应商评估与长效筛选机制, en: Structured supplier evaluation process established }
+              - { zh: 项目已顺利过渡至产品合规测试与本地化市场适配性评估阶段, en: Product testing phase initiated by client }
+          - type: status
+            label: { zh: 当前状态, en: Current Status }
+            value:
+              zh: 测试阶段 — 样品已交付，客户正在评估产品与市场的契合度及质量表现。
+              en: "Testing phase — Samples delivered, client evaluating product-market fit and quality performance."
 
-  - slug: case-studies/oem-odm
-    title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development Case Study }
+  - slug: case-studies/biz-representative
+    title: { zh: "北美商务代表服务", en: "North America Business Representative" }
     description:
-      zh: 制造与贴牌合作项目。
-      en: Manufacturing and private label partnership projects.
+      zh: 为中国护肤品牌提供持续的北美本地商务代表与渠道拓展支持。
+      en: Ongoing North America business representation and retail channel development for a Chinese skincare brand.
     masthead:
       eyebrow: { zh: 案例详情, en: Case Study }
-      title: { zh: OEM/ODM业务开发案例, en: OEM/ODM Business Development }
+      title: { zh: "北美商务代表服务 · 中国护肤品牌", en: "North America Retail & Distributor Development (Retainer Model)" }
       body: { zh: "", en: "" }
     sections:
-      - type: case-study-detail
+      - type: case-study-full
         theme: white
-        body:
-          zh: 我们正在整理详细的项目案例内容，敬请期待。
-          en: Detailed case study content is being prepared. Stay tuned.
-
-  - slug: case-studies/social-media
-    title: { zh: 社交媒体增长案例, en: Social Media Growth Case Study }
-    description:
-      zh: 数字营销与品牌增长执行项目。
-      en: Digital marketing and brand growth execution projects.
-    masthead:
-      eyebrow: { zh: 案例详情, en: Case Study }
-      title: { zh: 社交媒体增长案例, en: Social Media Growth }
-      body: { zh: "", en: "" }
-    sections:
-      - type: case-study-detail
-        theme: white
-        body:
-          zh: 我们正在整理详细的项目案例内容，敬请期待。
-          en: Detailed case study content is being prepared. Stay tuned.
+        blocks:
+          - type: section
+            title: { zh: 一、客户背景, en: Background }
+            body:
+              zh: 某中国功能性护肤品牌已完成产品合规备案，但缺乏海外团队支持，需要北美本地商务代表协助渠道拓展及日常商务沟通。该品牌没有海外团队或本地执行能力。
+              en: A Chinese functional skincare brand with completed regulatory compliance required a North America-based business representative to support channel communication, retail outreach, and ongoing partner management. The brand had no overseas team or local execution capability.
+          - type: section
+            title: { zh: 二、项目挑战, en: Challenge }
+            items:
+              - { zh: 缺乏海外业务拓展人员, en: No dedicated overseas business development personnel }
+              - { zh: 无法直接对接加拿大零售商及分销渠道, en: No direct communication with Canadian retailers or distributors }
+              - { zh: 缺乏本地关系维护及沟通能力, en: Lack of local relationship management capability }
+              - { zh: 缺乏持续商务跟进机制, en: No structured follow-up system for partnerships }
+          - type: section
+            title: { zh: 三、我们的解决方案, en: Our Strategy }
+            items:
+              - { zh: 作为北美商务代表提供持续执行支持, en: Acting as the North America-based business representative }
+              - { zh: 提供中英文商务沟通及邮件支持, en: Bilingual business communication and email coordination }
+              - { zh: 对接加拿大零售商及分销渠道, en: Retail and distributor outreach in Canada }
+              - { zh: 协助样品寄送及跟进管理, en: Sample coordination and logistics follow-up }
+              - { zh: 支持红人合作沟通及执行协调, en: Influencer collaboration communication and management }
+          - type: section
+            title: { zh: 四、执行过程, en: Implementation }
+            items:
+              - { zh: 与加拿大3家零售渠道建立初步业务沟通并进入对接阶段, en: Established communication with 3 Canadian retail channels }
+              - { zh: 完成样品寄送及全流程物流跟进，确保顺利交付至目标客户, en: Coordinated sample delivery and tracking process }
+              - { zh: 持续维护渠道沟通节奏，收集并整理阶段性反馈, en: Managed ongoing partner communication workflow }
+              - { zh: 协助推进红人合作沟通与执行落地跟进, en: Supported influencer collaboration coordination and feedback loop }
+          - type: section
+            title: { zh: 五、项目成果, en: Results }
+            items:
+              - { zh: 成功建立3个零售渠道沟通关系, en: 3 retail channel discussions initiated }
+              - { zh: 所有样品均已成功交付至目标渠道方, en: Sample delivery completed successfully }
+              - { zh: 建立基础渠道沟通与执行流程, en: Structured communication system established between brand and North American partners }
+              - { zh: 形成持续跟进的商务关系网络, en: Active pipeline of retail and distributor relationships created }
+          - type: status
+            label: { zh: 当前状态, en: Current Status }
+            value:
+              zh: 进行中 — 持续提供北美商务代表及渠道管理支持。
+              en: "Ongoing — Providing continuous North America business representation and channel management support."

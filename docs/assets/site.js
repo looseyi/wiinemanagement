@@ -219,7 +219,7 @@ function setupLeadForms() {
       const message = fd.get("message") || "";
       const needs = fd.getAll("needs").join(", ");
 
-      const subject = `[Wilnes] Inquiry from ${name} (${company})`;
+      const subject = `[Wilne] Inquiry from ${name} (${company})`;
       const body = [
         `Name: ${name}`,
         `Email: ${email}`,
@@ -232,8 +232,8 @@ function setupLeadForms() {
         `Message: ${message}`,
       ].join("\n");
 
-      const mailtoUrl = `mailto:dmiao@laurentian.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoUrl;
+      const linkedinUrl = "https://www.linkedin.com/company/wilne-management-ltd/";
+      window.location.href = linkedinUrl;
 
       if (status) {
         status.textContent = form.dataset[`success${locale === "en" ? "En" : "Zh"}`];

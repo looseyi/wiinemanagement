@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node --import tsx --test",
     "build": "node --import tsx scripts/build-site.ts",
+    "build:docs": "node --import tsx -e \"import('./scripts/build-site.ts').then(m => m.buildSite('./docs')).then(r => console.log('Built', r.pages.length, 'pages into', r.targetDir))\"",
     "generate": "node --import tsx scripts/build-site.ts",
     "clean": "node --import tsx -e \"import('node:fs/promises').then(fs => fs.rm('dist', { recursive: true, force: true }))\"",
     "serve": "npm run build && node --import tsx scripts/serve-site.ts",

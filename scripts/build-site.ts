@@ -56,11 +56,25 @@ async function writePages(distDir: string): Promise<string[]> {
 }
 
 async function buildSite(targetDir = path.join(projectRoot, "dist")): Promise<{ targetDir: string; pages: string[] }> {
+  // Preserve CNAME if it exists before wiping the dir
+  let cname: string | null = null;
+  try {
+    cname = await fs.readFile(path.join(targetDir, "CNAME"), "utf8");
+  } catch {
+    // no CNAME — that's fine
+  }
+
   await ensureCleanDir(targetDir);
   await fs.mkdir(path.join(targetDir, "assets"), { recursive: true });
   await compileStyles(targetDir);
   await copyPublicAssets(targetDir);
   const pages = await writePages(targetDir);
+
+  // Restore CNAME
+  if (cname !== null) {
+    await fs.writeFile(path.join(targetDir, "CNAME"), cname, "utf8");
+  }
+
   return { targetDir, pages };
 }
 
